@@ -28,15 +28,17 @@ class TenantDatabase implements ShouldQueue
     {
         $database = 'tenant_' . $this->tenant->id;
 
-        config(['database.connections.tenant.database'=>$database]);
-
         $connection = \DB::connection('tenant');
 
         $createMysql = $connection->getPdo()->exec("CREATE DATABASE IF NOT EXISTS `{$database}`");
 
         if ($createMysql) {
             $this->tenantManager->setTenant($this->tenant);
+
+            config(['database.connections.tenant.database'=>$database]);
+
             $connection->reconnect();
+
             $this->migrate();
         } else {
             $connection->statement('DROP DATABASE ' . $database);

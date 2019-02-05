@@ -27,13 +27,13 @@ class TenantController extends Controller
      */
     public function create()
     {
-        dd($this->addRecord('A',config('custom.CLOUDFLARE_ZONE'),config('custom.CLOUDFLARE_API'),'samm', config('custom.TENANT_HOST'),true, config('custom.CLOUDFLARE_EMAIL')));
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -44,7 +44,7 @@ class TenantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tenant  $tenant
+     * @param  \App\Tenant $tenant
      * @return \Illuminate\Http\Response
      */
     public function show(Tenant $tenant)
@@ -55,7 +55,7 @@ class TenantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tenant  $tenant
+     * @param  \App\Tenant $tenant
      * @return \Illuminate\Http\Response
      */
     public function edit(Tenant $tenant)
@@ -66,8 +66,8 @@ class TenantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tenant  $tenant
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Tenant $tenant
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tenant $tenant)
@@ -78,7 +78,7 @@ class TenantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tenant  $tenant
+     * @param  \App\Tenant $tenant
      * @return \Illuminate\Http\Response
      */
     public function destroy(Tenant $tenant)

@@ -21,7 +21,11 @@ class TenantObserver
     {
         TenantDatabase::dispatch($tenant, app(TenantManager::class));
 
-        $this->addRecord('A',config('custom.CLOUDFLARE_ZONE'),config('custom.CLOUDFLARE_API'),$tenant->company_name, config('custom.TENANT_HOST'),true, config('custom.CLOUDFLARE_EMAIL'));
+        $this->addRecord('A',
+            config('custom.CLOUDFLARE_ZONE'),
+            config('custom.CLOUDFLARE_API'), $tenant->company_name,
+            config('custom.TENANT_HOST'), true,
+            config('custom.CLOUDFLARE_EMAIL'));
     }
 
     /**
