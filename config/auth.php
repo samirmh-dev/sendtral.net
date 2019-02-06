@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'tenants',
+        'passwords' => 'users',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'tenants',
+            'provider' => 'users',
         ],
 
         'api' => [
@@ -65,9 +65,9 @@ return [
     */
 
     'providers' => [
-        'tenants' => [
+        'users' => [
             'driver' => 'eloquent',
-            'model' => App\Tenant::class,
+            'model' => App\User::class,
         ],
 
         // 'users' => [
@@ -92,8 +92,8 @@ return [
     */
 
     'passwords' => [
-        'tenants' => [
-            'provider' => 'tenants',
+        'users' => [
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
         ],

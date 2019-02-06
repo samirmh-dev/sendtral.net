@@ -2,15 +2,16 @@
 
 namespace App;
 
+use App\Services\TenantManager;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Tenant extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $connection = 'mysql';
+    protected $connection = 'tenant';
 
     /**
      * The attributes that are mass assignable.
@@ -29,7 +30,12 @@ class Tenant extends Authenticatable
     ];
 
     public function route($name, $parameters = []) {
-        return 'https://' . $this->subdomain .'.'. app('url')->route($name, $parameters, false);
+        return 'http://' . $this->subdomain .'.'. app('url')->route($name, $parameters, false);
+    }
+
+    public function hasAccessToTenant(TenantManager $manager)
+    {
+
     }
 
 }

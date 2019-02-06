@@ -26,12 +26,13 @@ class TenantManager {
      * @throws NotFoundHttpException
      */
     public function loadTenant(string $identifier, bool $subdomain): bool {
-        $tenant = Tenant::query()->where($subdomain ? 'subdomain' : 'domain', '=', $identifier)->first();
+        $tenant = Tenant::query()->where($subdomain ? 'company_name' : 'domain', '=', $identifier)->first();
 
         if ($tenant) {
             if (! $subdomain && !$tenant->canHaveDomain()) {
                 throw new NotFoundHttpException;
             }
+            config(['database.connections.tenant.database'=>'tenant_'.$tenant->id]);
             $this->setTenant($tenant);
             return true;
         }

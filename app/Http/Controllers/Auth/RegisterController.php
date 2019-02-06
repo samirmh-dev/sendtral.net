@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Jobs\TenantDatabase;
+use App\Services\TenantManager;
 use App\Tenant;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
@@ -51,11 +53,15 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+        $this->redirectTo = 'http://'.$this->seo_friendly_subdomain($request['company_name']).'.mrsamir.com';
+
         $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
+        event(new Registered($tenant = $this->create($request->all())));
 
-        return $this->registered($request, $user)
+        TenantDatabase::dispatch($tenant, app(TenantManager::class), $request->all());
+
+        return $this->registered($request, $tenant)
             ?: redirect($this->redirectPath())->with('status','New company registered successfully')->with('company_name',$request['company_name']);
     }
 
@@ -68,10 +74,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:tenants'],
+            'company_name' => ['required', 'string', 'max:8',  'unique:tenants'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             //todo: validate password with regex, one Uppercase, one Special and etc.
-            'company_name' => ['required', 'string', 'max:8',  'unique:tenants'],
         ]);
     }
 
@@ -84,9 +90,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Tenant::create([
-            'email' => $data['email'],
             'company_name' => $this->seo_friendly_subdomain($data['company_name']),
-            'password' => Hash::make($data['password']),
         ]);
     }
 

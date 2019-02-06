@@ -28,9 +28,11 @@ class IdentifyTenant
     public function handle($request, Closure $next)
     {
         $host = $request->getHost();
-        $pos = strpos($host, env('TENANT_DOMAIN'));
+        $tenant = str_replace('.'.config('custom.TENANT_DOMAIN'),'', $host);
 
-        if ($pos !== false && $this->tenantManager->loadTenant(substr($host, 0, $pos - 1))) {
+        if ($tenant !== false && $this->tenantManager->loadTenant($tenant, true)) {
+            session(['tenant'=>$tenant]);
+
             return $next($request);
         }
 

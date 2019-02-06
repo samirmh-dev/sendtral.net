@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\TenantManager;
+use App\Tenant;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -46,9 +48,12 @@ class LoginController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function login(Request $request)
+    public function login(Request $request, TenantManager $manager)
     {
         $this->validateLogin($request);
+
+        if(!session('tenant'))
+            return redirect()->to('http://'.Tenant::whereCompanyName($request['company'])->get()->first()->company_name.'.mrsamir.com');
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -73,10 +78,14 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
-        $request->validate([
-            $this->username() => 'required|string',
-            'password' => 'required|string',
-            'company' => 'required|exists:tenants,company_name',
-        ]);
+        if(session('tenant'))
+            $request->validate([
+                $this->username() => 'required|string',
+                'password' => 'required|string',
+            ]);
+        else
+            $request->validate([
+                'company' => 'required|exists:tenants,company_name',
+            ]);
     }
 }
