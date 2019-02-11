@@ -23,6 +23,7 @@
     <script src="{{asset('/plugins/modernizr/modernizr-custom.js')}}"></script>
     <!--  PLUGINS -->
     <link type="text/css" href="{{asset('/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
+    @stack('css')
 </head>
 <style>
     .has-error{
@@ -83,13 +84,13 @@
 
 <!-- APP JS -->
 <script src="{{asset('/js/app.js')}}"></script>
-
+@stack('js')
 <script>
     $(document).ready(function(){
 
-        $(".alert").fadeTo(2000, 500).slideUp(500, function(){
-            $(".alert").slideUp(500);
-        });
+        // $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+        //     $(".alert").slideUp(500);
+        // });
     });
 </script>
 </body>

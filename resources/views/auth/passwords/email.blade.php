@@ -1,47 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <!-- END MAIN WRAPPER -->
+    <!-- BEGIN MAIN WRAPPER -->
+    <div class="sm_bg_transparent">
+        <div class="login login-v2">
+            <!-- begin brand -->
+            <div class="login-header">
+                <div class="brand">
+                    Reset your password
                 </div>
+            </div>
+            <!-- end brand -->
+            <div class="login-content animated fadeInUp">
+                @if (Session::has('status'))
+                    <div class="form-group">
+
+
+                        <div class="alert alert-success">{{ Session::get('status') }}</div>
+                    </div>
+                @endif
+                <form action="{{route('tenant:password.email',['tenant'=>session('tenant')])}}" method="POST" class="margin-bottom-0">
+                    @csrf
+
+                    <div class="row mb-3">
+                        <div class="col-lg-12 sm-form-design">
+                            <input type="text" name="email" id="cf_email"
+                                   class="form-control h5-email"
+                                   placeholder="Please enter your email address"
+                                   value=""
+                                   autocomplete="off"
+                                   tabindex="1"
+                                   maxlength="35" required>
+                            <label class="control-label">EMAIL</label>
+                        </div>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                        <strong style="color: white">{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="login-buttons">
+                        <button  type="submit" class="btn btn-primary btn-block btn-lg sm_bg_6 border-0">Reset Password</button>
+                        <a class="market-button windows-button m-t-10 float-left m-r-0" href="{{route('login')}}" style="padding: 5px 14px 5px 40px; min-width:100%;">
+                            <span class="mb-subtitle text-center">Remembered? Click here</span>
+                            <span class="mb-title text-center">Login</span>
+                        </a>
+
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
-</div>
+
 @endsection

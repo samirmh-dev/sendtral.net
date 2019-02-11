@@ -29,7 +29,6 @@ class Tenant extends Authenticatable
     ];
 
     public function route($name, $parameters = []) {
-        return 'https://' . $this->subdomain .'.'. app('url')->route($name, $parameters, false);
+        return 'http://' . $this->subdomain .'.'. app('url')->route($name, $parameters, false);
     }
-
 }

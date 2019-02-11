@@ -30,12 +30,19 @@
                 <!-- begin login-content -->
                 <div class="login-content">
                   @if (session('status'))
-                        <div class="form-group">
-
-
-                            <div class="alert success">{{ session('status') }}</div>
+                        <div class="alert alert-danger show m-b-24">
+                            <span class="alert-close" data-dismiss="alert"></span>
+                            <i class="icon-ban"></i>&nbsp;&nbsp;<strong>Error:</strong>
+                            {{ session('status') }}
                         </div>
                     @endif
+                      @if (session('status-success'))
+                          <div class="alert alert-success show m-b-24">
+                              <span class="alert-close" data-dismiss="alert"></span>
+                              <i class="icon-ban"></i>&nbsp;&nbsp;<strong>Success:</strong>
+                              {{ session('status-success') }}
+                          </div>
+                      @endif
                     <form action="{{ route('login') }}" method="POST" class="margin-bottom-0 form-default">
                         @csrf
 
@@ -122,7 +129,7 @@
                                     <span class="mb-title text-center">Register Now</span>
                                 </a>
                             @endif
-                            <a class="market-button {{ !session('tenant')?'float-left':'' }} m-t-10  m-r-0 m-l-5" href="{{route('password.request')}}" style="padding: 5px 0px 5px 0px;min-width: 49%;">
+                            <a class="market-button {{ !session('tenant')?'float-left':'' }} m-t-10 m-r-0 {{ !session('tenant')?'m-l-2':'' }}" href="{{!session('tenant')?route('password.request'):route('tenant:password.request',['tenant'=>session('tenant')])}}" style="padding: 5px 0px 5px 0px;{{ !session('tenant')?'min-width: 49%;':'width:100%' }}">
                                 <span class="mb-subtitle text-center">Forget Password?</span>
                                 <span class="mb-title text-center">Reset Password</span>
                             </a>

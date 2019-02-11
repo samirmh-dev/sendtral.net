@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\TenantServiceProvider;
+use App\Services\TenantManager;
 use App\Tenant;
 use App\Traits\Cloudflare;
 use Illuminate\Http\Request;
@@ -84,5 +86,16 @@ class TenantController extends Controller
     public function destroy(Tenant $tenant)
     {
         //
+    }
+
+    public function requestResetPassword(Request $request, TenantManager $tenantManager)
+    {
+        $request->validate([
+            'company'=>'required|string|exists:tenants,company_name'
+        ]);
+
+        $tenantManager->loadTenant($request['company']);
+
+        return redirect()->route('tenant:password.request',['tenant'=>$tenantManager->getTenant()->company_name]);
     }
 }

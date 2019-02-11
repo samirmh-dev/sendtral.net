@@ -24,6 +24,7 @@ class TenantServiceProvider extends ServiceProvider
             return $manager->getTenant();
         });
 
+        // TODO: check this
         $this->app['db']->extend('tenant', function ($config, $name) use ($manager) {
             $tenant = $manager->getTenant();
 
@@ -42,6 +43,6 @@ class TenantServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Tenant::observe(TenantObserver::class);
+        //
     }
 }

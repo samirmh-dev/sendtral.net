@@ -34,15 +34,7 @@ class TenantDatabase implements ShouldQueue
 
         $connection = \DB::connection('tenant');
 
-        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME =  ?";
-        $db = $connection->select($query, [$database]);
-
-        if (!empty($db)) {
-            $connection->statement('DROP DATABASE ' . $database);
-            $this->handle();
-        }
-
-        $connection->getPdo()->exec("CREATE DATABASE IF NOT EXISTS `{$database}`");
+        $this->dropOrCreate($connection, $database);
 
         $this->tenantManager->setTenant($this->tenant);
 
@@ -52,10 +44,7 @@ class TenantDatabase implements ShouldQueue
 
         $this->migrate();
 
-        $connection->table('users')->insert([
-            'email' => $this->data['email'],
-            'password' => Hash::make($this->data['password'])
-        ]);
+        $this->createUser($connection);
     }
 
     private function migrate()
@@ -68,5 +57,26 @@ class TenantDatabase implements ShouldQueue
         }
 
         $migrator->run(database_path('migrations/tenants'), []);
+    }
+
+    private function createUser($connection)
+    {
+        $connection->table('users')->insert([
+            'email' => $this->data['email'],
+            'password' => Hash::make($this->data['password'])
+        ]);
+    }
+
+    private function dropOrCreate($connection, $database)
+    {
+        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME =  ?";
+        $db = $connection->select($query, [$database]);
+
+        if (!empty($db)) {
+            $connection->statement('DROP DATABASE ' . $database);
+            $this->handle();
+        }
+
+        $connection->getPdo()->exec("CREATE DATABASE IF NOT EXISTS `{$database}`");
     }
 }

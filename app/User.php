@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Notifications\ResetPassword;
 use App\Services\TenantManager;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
@@ -33,9 +34,8 @@ class User extends Authenticatable
         return 'http://' . $this->subdomain .'.'. app('url')->route($name, $parameters, false);
     }
 
-    public function hasAccessToTenant(TenantManager $manager)
+    public function sendPasswordResetNotification($token)
     {
-
+        $this->notify(new ResetPassword($token));
     }
-
 }
