@@ -39,10 +39,19 @@
                       @if (session('status-success'))
                           <div class="alert alert-success show m-b-24">
                               <span class="alert-close" data-dismiss="alert"></span>
-                              <i class="icon-ban"></i>&nbsp;&nbsp;<strong>Success:</strong>
+                              <i class="icon-support"></i>&nbsp;&nbsp;<strong>Success:</strong>
                               {{ session('status-success') }}
                           </div>
                       @endif
+
+                      @if (\Illuminate\Support\Facades\Input::get('success'))
+                          <div class="alert alert-success show m-b-24">
+                              <span class="alert-close" data-dismiss="alert"></span>
+                              <i class="icon-support"></i>&nbsp;&nbsp;<strong>Success:</strong>
+                              New company registered successfully
+                          </div>
+                      @endif
+
                     <form action="{{ route('login') }}" method="POST" class="margin-bottom-0 form-default">
                         @csrf
 

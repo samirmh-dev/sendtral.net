@@ -2,8 +2,10 @@
 
 namespace App\Jobs;
 
+use App\Notifications\UserRegistered;
 use App\Services\TenantManager;
 use App\Tenant;
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -44,7 +46,9 @@ class TenantDatabase implements ShouldQueue
 
         $this->migrate();
 
-        $this->createUser($connection);
+        $id = $this->createUser($connection);
+
+        User::findOrFail($id)->notify(new UserRegistered());
     }
 
     private function migrate()
@@ -61,7 +65,7 @@ class TenantDatabase implements ShouldQueue
 
     private function createUser($connection)
     {
-        $connection->table('users')->insert([
+        return $connection->table('users')->insertGetId([
             'email' => $this->data['email'],
             'password' => Hash::make($this->data['password'])
         ]);

@@ -53,7 +53,7 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-        $this->redirectTo = 'http://'.$this->seo_friendly_subdomain($request['company_name']).'.mrsamir.com';
+        $this->redirectTo = 'http://'.$this->seo_friendly_subdomain($request['company_name']).'.mrsamir.com?success=true';
 
         $this->validator($request->all())->validate();
 
@@ -62,7 +62,7 @@ class RegisterController extends Controller
         TenantDatabase::dispatch($tenant, app(TenantManager::class), $request->all());
 
         return $this->registered($request, $tenant)
-            ?: redirect($this->redirectPath())->with('status','New company registered successfully')->with('company_name',$request['company_name']);
+            ?: redirect($this->redirectPath())->with('company_name',$request['company_name']);
     }
 
     /**
