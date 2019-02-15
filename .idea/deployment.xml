@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="debian-s-1vcpu-1gb-fra1-01" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="aws-sendtral" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="debian-s-1vcpu-1gb-fra1-01">
+      <paths name="aws-sendtral">
         <serverdata>
           <mappings>
             <mapping deploy="/sendtral/www" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
+            <excludedPath path="/sendtral/www/vendor" />
           </excludedPaths>
         </serverdata>
       </paths>

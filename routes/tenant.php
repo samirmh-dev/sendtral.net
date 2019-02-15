@@ -6,11 +6,12 @@
  * Time: 10:04
  */
 
-Route::domain('{tenant}.mrsamir.com')->group(function () {
+Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->group(function () {
 
-    Route::get('/', 'Auth\LoginController@showLoginForm')->name('login')->where('tenant', '^((?!sendtral).)*$');
-    Route::post('/', 'Auth\LoginController@login')->where('tenant', '^((?!sendtral).)*$');
-    Route::post('/logout', 'Auth\LoginController@logout')->name('logout')->where('tenant', '^((?!sendtral).)*$');
+    //->where('tenant', '^((?!sendtral).)*$')
+    Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('/', 'Auth\LoginController@login');
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

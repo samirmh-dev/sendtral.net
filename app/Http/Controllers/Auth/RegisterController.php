@@ -53,7 +53,7 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-        $this->redirectTo = 'http://'.$this->seo_friendly_subdomain($request['company_name']).'.mrsamir.com?success=true';
+        $this->redirectTo = 'http://'.$this->seo_friendly_subdomain($request['company_name']).'.'.config('custom.TENANT_DOMAIN').'?success=true';
 
         $this->validator($request->all())->validate();
 

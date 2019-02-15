@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c337b2f-ed8c-4454-af01-676107f8592a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/TenantDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/TenantDatabase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/custom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tenant.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,39 +47,36 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="root@debian-s-1vcpu-1gb-fra1-01" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="sendtral: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="root@debian-s-1vcpu-1gb-fra1-01" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="tenant_1: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="root@debian-s-1vcpu-1gb-fra1-01" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="tenant_2: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+            <state relative-caret-position="527">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="das://953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/schema/sendtral/table/tenants">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/tenant.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -88,6 +90,9 @@
       <find>validatereset</find>
       <find>alert-success</find>
       <find>status-success</find>
+      <find>mrsamir.com</find>
+      <find>config('custom</find>
+      <find>TENANT_HOST</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Samir\PhpstormProjects\sendtral\resources</dir>
@@ -104,13 +109,11 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Providers/TenantServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Tenant.php" />
         <option value="$PROJECT_DIR$/app/Http/Services/TenantManager.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TenantController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/routes/tenant.php" />
         <option value="$PROJECT_DIR$/app/Notifications/ResetPassword.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" />
@@ -122,7 +125,13 @@
         <option value="$PROJECT_DIR$/app/Jobs/TenantDatabase.php" />
         <option value="$PROJECT_DIR$/app/Notifications/UserRegistered.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/config/custom.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/console.sql" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/IdentifyTenant.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/routes/tenant.php" />
       </list>
     </option>
   </component>
@@ -230,22 +239,19 @@
       <path value="$PROJECT_DIR$/vendor/anhskohbo/no-captcha" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="55" />
-    <option name="y" value="20" />
-    <option name="width" value="1750" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2560" />
+    <option name="height" value="1349" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,38 +262,13 @@
             <path>
               <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
               <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,6 +331,8 @@
       <workItem from="1549887090853" duration="9000" />
       <workItem from="1549893096894" duration="7794000" />
       <workItem from="1549907474083" duration="1077000" />
+      <workItem from="1550210295742" duration="866000" />
+      <workItem from="1550211721898" duration="738000" />
     </task>
     <task id="LOCAL-00001" summary="1. Login, registration and forgot password for multi tenant">
       <created>1549900611842</created>
@@ -362,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8929000" />
+    <option name="totallyTimeSpent" value="11277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,9 +357,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21055438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12827641" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -389,18 +372,18 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49940827" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329927" />
       <window_info anchor="bottom" auto_hide="true" id="Terminal" order="10" sideWeight="0.49946696" weight="0.21235102" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.33802816" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.25144175" />
-      <window_info anchor="bottom" id="File Transfer" order="14" weight="0.15926327" />
+      <window_info anchor="bottom" id="File Transfer" order="14" visible="true" weight="0.15839416" />
       <window_info anchor="bottom" id="Messages" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" auto_hide="true" id="Remote Host" order="3" weight="0.1705757" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.141258" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.11517077" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,69 +395,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="1. Login, registration and forgot password for multi tenant" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AuthTenant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/custom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Observers/TenantObserver.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/IdentifyTenant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/TenantServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/captcha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/tenants/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -541,13 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -637,13 +550,7 @@
     <entry file="file://$PROJECT_DIR$/config/hashing.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/schema/tenant_1/table/password_resets">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/schema/tenant_1/table/password_resets" />
     <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -655,13 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/tenant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -692,9 +592,6 @@
           <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -752,10 +649,161 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/captcha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/schema/sendtral/table/tenants">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/custom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://DATABASE/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:tenant_1">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:tenant_1</OriginalElement>
+          <nodes>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.migrations</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.migrations</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.sessions</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.tenants</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.failed_jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.password_resets</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.sessions</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.migrations</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.password_resets</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.users</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.users</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.failed_jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.cache</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.cache</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.sessions</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.cache</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_1.jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.failed_jobs</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="639.0" y="532.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:sendtral">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:sendtral</OriginalElement>
+          <nodes>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.sessions</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.migrations</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.cache</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.failed_jobs</node>
+            <node x="" y="">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:sendtral.tenants</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="389.0" y="266.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:tenant_2">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.SCHEMA:tenant_2</OriginalElement>
+          <nodes>
+            <node x="244.0" y="436.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.password_resets</node>
+            <node x="0.0" y="0.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.users</node>
+            <node x="0.0" y="229.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.failed_jobs</node>
+            <node x="0.0" y="436.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.migrations</node>
+            <node x="235.0" y="229.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.sessions</node>
+            <node x="479.0" y="436.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.cache</node>
+            <node x="290.0" y="0.0">953e9e0b-72bd-4329-93ed-eb8d47f1cf8b.TABLE:tenant_2.jobs</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="322.0" y="266.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/tenant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
         </state>
       </provider>
     </entry>

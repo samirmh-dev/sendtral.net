@@ -53,7 +53,7 @@ class LoginController extends Controller
         $this->validateLogin($request);
 
         if(!session('tenant'))
-            return redirect()->to('http://'.Tenant::whereCompanyName($request['company'])->get()->first()->company_name.'.mrsamir.com');
+            return redirect()->to('http://'.Tenant::whereCompanyName($request['company'])->get()->first()->company_name.'.'.config('custom.TENANT_DOMAIN'));
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
