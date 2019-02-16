@@ -45,6 +45,8 @@ class VerificationController extends Controller
 
     public function show(Request $request)
     {
+        $this->redirectTo = route('tenant:dashboard',['tenant'=>session('tenant')]);
+
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
             : view('auth.verify');

@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Notifications\UserRegistered;
+use App\Notifications\VerifyEmail;
 use App\Services\TenantManager;
 use App\Tenant;
 use App\User;
@@ -48,7 +49,7 @@ class TenantDatabase implements ShouldQueue
 
         $id = $this->createUser($connection);
 
-//        User::findOrFail($id)->notify(new UserRegistered());
+        User::findOrFail($id)->notify(new VerifyEmail);
     }
 
     private function migrate()
