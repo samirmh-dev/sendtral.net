@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -74,7 +75,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'company_name' => ['required', 'string', 'max:8',  'unique:tenants'],
+            'company_name' => ['required', 'string', 'max:30',  Rule::unique('tenants')->where(function ($query) use ($data) {
+                return $query->where('slug', $this->seo_friendly_subdomain($data['company_name']));
+            })],
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             //todo: validate password with regex, one Uppercase, one Special and etc.
@@ -90,7 +93,8 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Tenant::create([
-            'company_name' => $this->seo_friendly_subdomain($data['company_name']),
+            'company_name' => $data['company_name'],
+            'slug' => $this->seo_friendly_subdomain($data['company_name']),
         ]);
     }
 

@@ -26,7 +26,7 @@ class TenantManager {
      * @throws NotFoundHttpException
      */
     public function loadTenant(string $identifier, bool $subdomain = true): bool {
-        $tenant = Tenant::query()->where($subdomain ? 'company_name' : 'domain', '=', $identifier)->first();
+        $tenant = Tenant::query()->where($subdomain ? 'slug' : 'domain', '=', $identifier)->first();
 
         if ($tenant) {
             if (! $subdomain && !$tenant->canHaveDomain()) {

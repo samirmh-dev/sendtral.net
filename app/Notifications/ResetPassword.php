@@ -2,6 +2,8 @@
 
 namespace App\Notifications;
 
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -58,10 +60,10 @@ class ResetPassword extends Notification
 
         return (new MailMessage)
             ->subject(Lang::getFromJson('Reset Password Notification'))
-            ->line(Lang::getFromJson('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::getFromJson('Reset Password'),route('tenant:password.reset', ['token'=>$this->token,'tenant'=>session('tenant')], true))
-            ->line(Lang::getFromJson('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.users.expire')]))
-            ->line(Lang::getFromJson('If you did not request a password reset, no further action is required.'));
+            ->view('email.reset-password', ['url'=>route('tenant:password.reset', [
+                'token'=>$this->token,'tenant'=>session('tenant'),]),
+                'expire'=>config('auth.passwords.users.expire')
+            ]);
     }
 
     /**

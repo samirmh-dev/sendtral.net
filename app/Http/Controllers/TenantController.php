@@ -96,6 +96,6 @@ class TenantController extends Controller
 
         $tenantManager->loadTenant($request['company']);
 
-        return redirect()->route('tenant:password.request',['tenant'=>$tenantManager->getTenant()->company_name]);
+        return redirect()->route('tenant:password.request',['tenant'=>$tenantManager->getTenant()->slug]);
     }
 }

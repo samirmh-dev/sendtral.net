@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="root@debian-s-1vcpu-1gb-fra1-01" uuid="953e9e0b-72bd-4329-93ed-eb8d47f1cf8b">
+    <data-source name="MySQL - @18.216.91.60" uuid="0c51a9e5-5427-471f-92f8-c9ea5897aed6">
       <database-info product="MySQL" version="8.0.15" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="8.0.15" exact-driver-version="5.1">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:@,mysql,performance_schema,sendtral,sys,tenant_1,tenant_2,tenant_3</introspection-schemas>
+      <introspection-schemas>*:*</introspection-schemas>
       <ssh-properties>
         <enabled>true</enabled>
-        <proxy-host>68.183.240.117</proxy-host>
-        <user>root</user>
+        <proxy-host>18.216.91.60</proxy-host>
+        <user>ubuntu</user>
         <use-password>false</use-password>
         <auth-type>KEY_PAIR</auth-type>
       </ssh-properties>

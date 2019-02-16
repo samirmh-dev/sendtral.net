@@ -1,22 +1,25 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@push('js')
+    @if (session('status'))
+        <script>setTimeout(()=>{
+                toastr["success"]("{{ session('status') }}","Success")
+            },1000)</script>
+    @endif
+@endpush
 
 @section('content')
-    <!-- BEGIN MAIN WRAPPER -->
     <div class="sm_bg_transparent">
         <div class="login login-v2">
-            <!-- begin brand -->
             <div class="login-header">
                 <div class="brand">
                     Reset your password
                 </div>
             </div>
-            <!-- end brand -->
             <div class="login-content animated fadeInUp">
                 <form action="{{ route('tenant:password.update',['tenant'=>session('tenant')]) }}" method="POST" class="margin-bottom-0">
                     @csrf
-
                     <input type="hidden" name="token" value="{{ $token }}">
-
                     <div class="row mb-3">
                         <div class="col-lg-12 sm-form-design">
                             <input type="text" name="email" id="cf_email"
@@ -30,8 +33,8 @@
                         </div>
                         @if ($errors->has('email'))
                             <span class="help-block">
-                                        <strong style="color: white">{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <strong style="color: white">{{ $errors->first('email') }}</strong>
+                            </span>
                         @endif
                     </div>
                     <div class="row mb-3">
@@ -47,8 +50,8 @@
                         </div>
                         @if ($errors->has('password'))
                             <span class="help-block">
-                                        <strong style="color: white">{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <strong style="color: white">{{ $errors->first('password') }}</strong>
+                            </span>
                         @endif
                     </div>
                     <div class="row mb-3">
@@ -69,12 +72,9 @@
                             <span class="mb-subtitle text-center">Remembered? Click here</span>
                             <span class="mb-title text-center">Login</span>
                         </a>
-
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
-    <!-- END MAIN WRAPPER -->
 @endsection

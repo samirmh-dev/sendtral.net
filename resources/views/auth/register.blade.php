@@ -1,20 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@push('js')
+    @if (session('status'))
+        <script>setTimeout(()=>{
+                toastr["danger"]("{{ session('status') }}","Success")
+            },1000)</script>
+    @endif
+@endpush
 
 @section('content')
-
-    <!-- BEGIN MAIN WRAPPER -->
     <div class="body-wrap">
         <div class="login login-v3 register">
-            <!-- begin news-feed -->
             <div class="news-feed">
                 <div class="news-image">
                     <img src="http://www.apexinformatics.com/sendtral/assets/img/banner-bg4.jpg" data-id="login-cover-image" alt=""/>
                 </div>
             </div>
-            <!-- end news-feed -->
-            <!-- begin right-content -->
             <div class="right-content fullvh">
-                <!-- begin login-header -->
                 <div class="login-header">
                     <div class="brand">
                         Sendtral
@@ -24,17 +26,9 @@
                         <i class="ion-log-in"></i>
                     </div>
                 </div>
-                <!-- end login-header -->
-                <!-- begin login-content -->
                 <div class="login-content">
-                    @if (session('status'))
-                        <div class="form-group">
-                            <div class="alert alert-danger">{{ session('status') }}</div>
-                        </div>
-                    @endif
                     <form class="form-default " method="post" action="{{route('register')}}" id="signup-form" >
                     @csrf
-
                         <div class="row mb-3">
                             <div class="col-lg-12 sm-form-design ">
                                 <input type="text" class="form-control h5-email {{ $errors->has('email') ? ' has-error' : '' }}"
@@ -46,10 +40,7 @@
                                     </span>
                                 @endif
                             </div>
-
-
                         </div>
-
                         <div class="row mb-3">
                             <div class="col-lg-12 sm-form-design">
                                 <input type="password" class="form-control h5-email  {{ $errors->has('password') ? ' has-error' : '' }}"
@@ -61,10 +52,8 @@
                                     </span>
                                 @endif
                             </div>
-
                         </div>
                         <div class="row mb-3">
-
                             <div class="col-lg-12 sm-form-design res-md-m-t-16 res-xs-m-t-16">
                                 <input type="password" class="form-control h5-email  {{ $errors->has('password_confirmation') ? ' has-error' : '' }}"
                                        placeholder="Please confirm your password" name="password_confirmation">
@@ -77,7 +66,6 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-
                             <div class="col-lg-12 sm-form-design res-md-m-t-16 res-xs-m-t-16">
                                 <input required type="text" class="form-control h5-email  {{ $errors->has('company_name') ? ' has-error' : '' }}"
                                      value="{{ old('company_name') }}"  placeholder="Please enter your company name" name="company_name">
@@ -92,7 +80,6 @@
                         <div class="mt-1">
                             <small class="">By clicking "Sign up" you agree to our terms and conditions</small>
                         </div>
-
                         <button type="submit"
                                 class="btn btn-styled btn-block btn-base-1 mt-4 sm_bg_6 border-0 text-white pull-right">
                             Register Now
@@ -107,11 +94,7 @@
                         </p>
                     </form>
                 </div>
-                <!-- end login-content -->
             </div>
-            <!-- end right-container -->
         </div>
     </div>
-    <!-- END MAIN WRAPPER -->
-
 @endsection

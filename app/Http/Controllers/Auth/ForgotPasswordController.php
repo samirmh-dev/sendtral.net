@@ -50,4 +50,9 @@ class ForgotPasswordController extends Controller
             ? $this->sendResetLinkResponse($request, $response)
             : $this->sendResetLinkFailedResponse($request, $response);
     }
+
+    protected function sendResetLinkResponse(Request $request, $response)
+    {
+        return back()->with('status', trans($response))->withInput();
+    }
 }

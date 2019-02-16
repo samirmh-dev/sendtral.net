@@ -1,0 +1,30 @@
+@import 'lib';
+@import 'css/style.css';
+
+.has-error{
+    border-color:red !important;
+    color:red !important;
+}
+.help-block{
+    color:red;
+    font-size:14px;
+}
+.state-error + em{
+    display: block;
+    margin-top: 6px;
+    margin-left: 14px;
+    padding: 0 1px;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: #d9534f;
+}
+.state-error .form-control{
+    border-color: #db4c4a !important;
+}
+.state-success .form-control{
+    border-color: #7edc7f !important;
+}
+#toast-container{
+    margin-top: 15px
+}

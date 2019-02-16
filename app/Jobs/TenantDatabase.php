@@ -48,7 +48,7 @@ class TenantDatabase implements ShouldQueue
 
         $id = $this->createUser($connection);
 
-        User::findOrFail($id)->notify(new UserRegistered());
+//        User::findOrFail($id)->notify(new UserRegistered());
     }
 
     private function migrate()
