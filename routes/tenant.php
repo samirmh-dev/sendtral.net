@@ -18,9 +18,9 @@ Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->group(function () {
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-    Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-    Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
-    Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+    Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice')->middleware('authTenant');
+    Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify')->middleware('authTenant');
+    Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend')->middleware('authTenant');
 
     Route::prefix('dashboard')->middleware(['verified','authTenant'])->group(function(){
        Route::view('/','dashboard.index')->name('dashboard');
