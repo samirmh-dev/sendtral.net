@@ -27,8 +27,7 @@
     <div class="body-wrap">
         <div class="login login-v3">
             <div class="news-feed">
-                <div class="news-image">
-                    <img src="http://www.apexinformatics.com/sendtral/assets/img/banner-bg3.jpg" data-id="login-cover-image" alt=""/>
+                <div class="news-image" style="background-image: url('{{ asset('content/banner-bg3.jpeg') }}');background-position: center; background-size: cover;background-repeat: no-repeat">
                 </div>
             </div>
             <div class="right-content fullvh">

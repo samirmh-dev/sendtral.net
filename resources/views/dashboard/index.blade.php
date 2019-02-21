@@ -1,7 +1,6 @@
-@extends('template.default')
+@extends('layouts.dashboard')
 
 @section('content')
-
     <!--BEGIN CONTENT-->
     <section id="main_content" class="bg slice-sm sct-color-1">
         <div class="container" id="container">

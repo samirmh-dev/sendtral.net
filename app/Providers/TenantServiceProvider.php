@@ -3,8 +3,11 @@
 namespace App\Providers;
 
 use App\Observers\TenantObserver;
+use App\Observers\UserObserver;
 use App\Services\TenantManager;
 use App\Tenant;
+use App\User;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class TenantServiceProvider extends ServiceProvider
@@ -43,6 +46,6 @@ class TenantServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
     }
 }

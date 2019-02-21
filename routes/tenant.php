@@ -6,9 +6,8 @@
  * Time: 10:04
  */
 
-Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->group(function () {
+Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->attribute('where',['tenant'=>'^((?!www).)*$'])->group(function () {
 
-    //->where('tenant', '^((?!sendtral).)*$')
     Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('/', 'Auth\LoginController@login');
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
@@ -22,7 +21,8 @@ Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->group(function () {
     Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify')->middleware('authTenant');
     Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend')->middleware('authTenant');
 
-    Route::prefix('dashboard')->middleware(['verified','authTenant'])->group(function(){
+    Route::prefix('dashboard')->middleware(['authTenant','verified'])->group(function(){
        Route::view('/','dashboard.index')->name('dashboard');
+       Route::view('access-logs','dashboard.security.access-logs')->name('access-logs');
     });
 });

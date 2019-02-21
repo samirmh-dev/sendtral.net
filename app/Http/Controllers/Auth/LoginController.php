@@ -43,17 +43,29 @@ class LoginController extends Controller
     /**
      * Handle a login request to the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     * @param TenantManager $manager
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      *
      * @throws \Illuminate\Validation\ValidationException
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function login(Request $request, TenantManager $manager)
     {
         $this->validateLogin($request);
 
+        $manager->loadTenant(session('tenant'));
+
         if(!session('tenant'))
             return redirect()->to('http://'.Tenant::whereCompanyName($request['company'])->get()->first()->slug.'.'.config('custom.TENANT_DOMAIN'));
+
+        print_r($request['previous']);
+
+        if($request->has('previous') && !in_array($request['previous'],[
+                'https://'.Tenant::whereCompanyName($request['company'])->get()->first()->slug.'.'.config('custom.TENANT_DOMAIN'),
+                route('register')
+            ]))
+            $this->redirectTo = $request['previous'];
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -82,10 +94,31 @@ class LoginController extends Controller
             $request->validate([
                 $this->username() => 'required|string',
                 'password' => 'required|string',
+//                'g-recaptcha-response' => 'required|captcha'
             ]);
         else
             $request->validate([
                 'company' => 'required|exists:tenants,company_name',
+//                'g-recaptcha-response' => 'required|captcha'
             ]);
+    }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user)
+    {
+       return redirect()->intended();
+    }
+
+    public function showLoginForm()
+    {
+        session(['url.intended'=>\URL::previous()]);
+
+        return view('auth.login');
     }
 }

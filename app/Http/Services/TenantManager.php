@@ -32,7 +32,9 @@ class TenantManager {
             if (! $subdomain && !$tenant->canHaveDomain()) {
                 throw new NotFoundHttpException;
             }
+
             config(['database.connections.tenant.database'=>'tenant_'.$tenant->id]);
+
             $this->setTenant($tenant);
             return true;
         }

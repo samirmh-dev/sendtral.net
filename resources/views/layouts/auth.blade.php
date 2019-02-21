@@ -10,7 +10,6 @@
     @stack('meta')
     <title class="has_page_title">{{ session('tenant')!==NULL?ucfirst(session('tenant')) . ' - Sendtral':'Sendtral - Adding Power to Your Process' }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.min.css') }}">
-{{--    <script type="application/javascript" src="{{ mix('js/modernizr-custom.min.js') }}"></script>--}}
     @stack('css')
 </head>
 <body class="">

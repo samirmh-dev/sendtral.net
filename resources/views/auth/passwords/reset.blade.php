@@ -6,6 +6,22 @@
                 toastr["success"]("{{ session('status') }}","Success")
             },1000)</script>
     @endif
+    {!!  NoCaptcha::renderJs('en',1,'recaptchaCallback') !!}
+    <script>
+        function recaptchaCallback() {
+            document.querySelectorAll('.g-recaptcha').forEach(function (el) {
+                grecaptcha.render(el);
+            });
+            setTimeout(function(){
+                $('#g-recaptcha-response').attr('required',1).css({
+                    'display': 'block',
+                    'position': 'absolute',
+                    'top': '0',
+                    'z-index': '-999999',
+                });
+            },350)
+        }
+    </script>
 @endpush
 
 @section('content')
@@ -22,7 +38,7 @@
                     <input type="hidden" name="token" value="{{ $token }}">
                     <div class="row mb-3">
                         <div class="col-lg-12 sm-form-design">
-                            <input type="text" name="email" id="cf_email"
+                            <input type="email" name="email" id="cf_email"
                                    class="form-control h5-email"
                                    placeholder="Please enter your email address"
                                    value="{{ old('email') }}"
@@ -30,12 +46,12 @@
                                    tabindex="1"
                                    maxlength="35" required>
                             <label class="control-label">EMAIL</label>
-                        </div>
-                        @if ($errors->has('email'))
-                            <span class="help-block">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
                                 <strong style="color: white">{{ $errors->first('email') }}</strong>
                             </span>
-                        @endif
+                            @endif
+                        </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-lg-12 sm-form-design">
@@ -47,12 +63,12 @@
                                    tabindex="1"
                                    maxlength="35" required>
                             <label class="control-label">New Password</label>
-                        </div>
-                        @if ($errors->has('password'))
-                            <span class="help-block">
+                            @if ($errors->has('password'))
+                                <span class="help-block">
                                 <strong style="color: white">{{ $errors->first('password') }}</strong>
                             </span>
-                        @endif
+                            @endif
+                        </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-lg-12 sm-form-design">
@@ -66,6 +82,10 @@
                             <label class="control-label">Confirm Password</label>
                         </div>
                     </div>
+                    <div style="position: relative;display: flex; justify-content: center">
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                    <br>
                     <div class="login-buttons">
                         <button type="submit" class="btn btn-primary btn-block btn-lg sm_bg_6 border-0">Reset Password</button>
                         <a class="market-button windows-button m-t-10 float-left m-r-0" href="{{route('login')}}" style="padding: 5px 14px 5px 40px;min-width:100%;">

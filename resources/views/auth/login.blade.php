@@ -3,7 +3,7 @@
 @push('js')
     @if (session('status'))
         <script>setTimeout(()=>{
-                toastr["danger"]("{{ session('status') }}","Success")
+                toastr["warning"]("{{ session('status') }}","Warning")
             },1000)</script>
     @endif
     @if (session('status-success'))
@@ -16,14 +16,29 @@
                 toastr["success"]("New company registered successfully","Success")
             },1000)</script>
     @endif
+    {!!  NoCaptcha::renderJs('en',1,'recaptchaCallback') !!}
+    <script>
+        function recaptchaCallback() {
+            document.querySelectorAll('.g-recaptcha').forEach(function (el) {
+                grecaptcha.render(el);
+            });
+            setTimeout(function(){
+                $('#g-recaptcha-response').attr('required',1).css({
+                    'display': 'block',
+                    'position': 'absolute',
+                    'top': '0',
+                    'z-index': '-999999',
+                });
+            },350)
+        }
+    </script>
 @endpush
 
 @section('content')
     <div class="body-wrap">
         <div class="login login-v3">
             <div class="news-feed">
-                <div class="news-image">
-                    <img src="http://www.apexinformatics.com/sendtral/assets/img/banner-bg3.jpg" data-id="login-cover-image" alt=""/>
+                <div class="news-image" style="background-image: url('{{ asset('content/banner-bg3.jpeg') }}');background-position: center; background-size: cover;background-repeat: no-repeat">
                 </div>
             </div>
             <div class="right-content fullvh">
@@ -37,6 +52,7 @@
 
                     <form action="{{ route('login') }}" method="POST" class="margin-bottom-0 form-default">
                         @csrf
+
                         <div class="row mb-3">
                             <div class="col-lg-12 sm-form-design ">
                                 <div class="input-group input-group--style-1">
@@ -44,12 +60,12 @@
                                            class="form-control h5-email {{ $errors->has('company') ? ' has-error' : '' }}"
                                            placeholder="Please enter your company name"
                                            value="{{ session('tenant')?session('tenant').'.sendtral.net':(old('company')??'') }}"
-                                           autocomplete="off"
+                                           required autocomplete="off"
                                            tabindex="1"
                                            maxlength="35">
 
                                     @if(!session('tenant'))
-                                        <span class="input-group-addon" style="    border-right-style: solid;
+                                        <span class="input-group-addon {{ $errors->has('company') ? ' has-error' : '' }}" style="    border-right-style: solid;
     border-right-width: 1px;border-right-color: rgb(230, 230, 230);">
                                                                                 .sendtral.com
                                     </span>
@@ -110,30 +126,37 @@
                                 </div>
                             </div>
                         @endif
-
+                        <div style="position: relative;">
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                        <br>
                         <div class="login-buttons">
                             <button type="submit" class="btn btn-success btn-block btn-lg sm_bg_6 border-0">Sign me in
                             </button>
+                        </div>
+                        <div>
                             @if(!session('tenant'))
-                                <a class="market-button  m-t-10 float-left m-r-0" href="{{route('register')}}"
+                                <a class="market-button  m-t-10  m-r-0" href="{{route('register')}}"
                                    style="min-width: 49%;padding: 5px 0px 5px 0px;">
                                     <span class="mb-subtitle text-center">Not a member yet?</span>
                                     <span class="mb-title text-center">Register Now</span>
                                 </a>
                             @endif
-                            <a class="market-button {{ !session('tenant')?'float-left':'' }} m-t-10 m-r-0 {{ !session('tenant')?'m-l-2':'' }}"
+                            <a class="market-button  m-t-10 m-r-0 {{ !session('tenant')?'m-l-2':'' }}"
                                href="{{!session('tenant')?route('password.request'):route('tenant:password.request',['tenant'=>session('tenant')])}}"
                                style="padding: 5px 0px 5px 0px;{{ !session('tenant')?'min-width: 49%;':'width:100%' }}">
                                 <span class="mb-subtitle text-center">Forget Password?</span>
                                 <span class="mb-title text-center">Reset Password</span>
                             </a>
                         </div>
+                    </form>
 
+                    <div>
                         <hr/>
                         <p class="text-center f-s-12">
                             Copyright &copy; 2017-2022 Sendtral. All Rights Reserved | <a href="">Privacy Policy </a>.
                         </p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

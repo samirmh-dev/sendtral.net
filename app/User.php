@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Notifications\ResetPassword;
+use App\Services\TenantManager;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,5 +42,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new Notifications\VerifyEmail);
+    }
+
+    public function tenant()
+    {
+        return Tenant::whereSlug(session('tenant'))->get()->first()->toArray();
+    }
+
+    public function access_logs()
+    {
+        return $this->hasMany(AccessLogs::class,'user_id');
     }
 }

@@ -78,9 +78,13 @@ class RegisterController extends Controller
             'company_name' => ['required', 'string', 'max:30',  Rule::unique('tenants')->where(function ($query) use ($data) {
                 return $query->where('slug', $this->seo_friendly_subdomain($data['company_name']));
             })],
+            'fullname'=>'required|string',
             'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            //todo: validate password with regex, one Uppercase, one Special and etc.
+            'password' => ['required', 'string', 'min:6', 'confirmed', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/'],
+            'g-recaptcha-response' => 'required|captcha'
+        ],[
+            'password.min'=>'Password must contain at least 6 character contains numbers, uppercase, lowercase and unicode symbols',
+            'password.regex'=>'Password must contain at least 6 character contains numbers, uppercase, lowercase and unicode symbols'
         ]);
     }
 

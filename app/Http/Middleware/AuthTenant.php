@@ -14,7 +14,6 @@ class AuthTenant
         $this->tenantManager = $tenantManager;
     }
 
-
     /**
      * Handle an incoming request.
      *
@@ -26,8 +25,9 @@ class AuthTenant
     {
         $user = auth('web')->check();
 
-        if(!$user)
-            return redirect()->route('login')->with('status','You need to login');
+        if(!$user) {
+            return redirect()->route('login')->with('status', 'You need to login');
+        }
 
         return $next($request);
     }

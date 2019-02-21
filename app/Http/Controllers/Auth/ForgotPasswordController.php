@@ -55,4 +55,18 @@ class ForgotPasswordController extends Controller
     {
         return back()->with('status', trans($response))->withInput();
     }
+
+    /**
+     * Validate the email for the given request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    protected function validateEmail(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+    }
 }

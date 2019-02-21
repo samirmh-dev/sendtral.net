@@ -13,9 +13,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Hash;
 
-class TenantDatabase implements ShouldQueue
+class TenantDatabase
 {
-
     use Dispatchable, InteractsWithQueue, Queueable;
 
     protected $tenant;
@@ -47,9 +46,13 @@ class TenantDatabase implements ShouldQueue
 
         $this->migrate();
 
+        # returns user ID
         $id = $this->createUser($connection);
 
-        User::findOrFail($id)->notify(new VerifyEmail);
+//        session(['tenant'=>$this->tenant->slug]);
+
+        User::findOrFail($id)->notify(new VerifyEmail($this->tenant->slug));
+
     }
 
     private function migrate()
@@ -68,6 +71,7 @@ class TenantDatabase implements ShouldQueue
     {
         return $connection->table('users')->insertGetId([
             'email' => $this->data['email'],
+            'fullname' => $this->data['fullname'],
             'password' => Hash::make($this->data['password'])
         ]);
     }

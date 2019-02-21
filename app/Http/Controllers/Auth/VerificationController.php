@@ -36,9 +36,9 @@ class VerificationController extends Controller
      *
      * @return void
      */
-    public function __construct(TenantManager $tenantManager)
+    public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('authTenant');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
@@ -59,7 +59,7 @@ class VerificationController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function verify(Request $request)
+    public function verify(Request $request,TenantManager $tenantManager)
     {
         $this->redirectTo = route('tenant:dashboard',['tenant'=>session('tenant')]);
 

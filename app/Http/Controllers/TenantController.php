@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use App\Providers\TenantServiceProvider;
 use App\Services\TenantManager;
 use App\Tenant;
-use App\Traits\Cloudflare;
 use Illuminate\Http\Request;
 
 class TenantController extends Controller
 {
-    use Cloudflare;
-
     /**
      * Display a listing of the resource.
      *
@@ -91,7 +88,8 @@ class TenantController extends Controller
     public function requestResetPassword(Request $request, TenantManager $tenantManager)
     {
         $request->validate([
-            'company'=>'required|string|exists:tenants,company_name'
+            'company'=>'required|string|exists:tenants,company_name',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $tenantManager->loadTenant($request['company']);

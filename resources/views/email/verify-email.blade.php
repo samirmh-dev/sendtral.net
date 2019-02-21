@@ -289,7 +289,7 @@
                         </div>
 
                         © 2016-2019
-                        <a href="http://perfectin.co/" target="_blank"
+                        <a href="{{ config('app.url') }}" target="_blank"
                            style="font-weight: bold;color: #ffffff;">Sendtral</a>.All Rights Reserved.
                     </td>
                 </tr>

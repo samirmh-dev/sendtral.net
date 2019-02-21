@@ -6,6 +6,22 @@
                 toastr["success"]("{{ session('success') }}","Success")
             },1000)</script>
     @endif
+    {!!  NoCaptcha::renderJs('en',1,'recaptchaCallback') !!}
+    <script>
+        function recaptchaCallback() {
+            document.querySelectorAll('.g-recaptcha').forEach(function (el) {
+                grecaptcha.render(el);
+            });
+            setTimeout(function(){
+                $('#g-recaptcha-response').attr('required',1).css({
+                    'display': 'block',
+                    'position': 'absolute',
+                    'top': '0',
+                    'z-index': '-999999',
+                });
+            },350)
+        }
+    </script>
 @endpush
 
 @section('content')
@@ -22,7 +38,7 @@
                     <div class="row mb-3">
                         <div class="col-lg-12 sm-form-design">
                             <div class="input-group input-group--style-1">
-                                <input {{ session('tenant')?'readonly':'' }} type="text" name="company" id=""
+                                <input required {{ session('tenant')?'readonly':'' }} type="text" name="company" id=""
                                        class="form-control h5-email {{ $errors->has('company') ? '' : '' }}"
                                        placeholder="Please enter your company name"
                                        value="{{ old('company') }}"
@@ -44,6 +60,10 @@
                             @endif
                         </div>
                     </div>
+                    <div style="position: relative;">
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                    <br>
                     <div class="login-buttons">
                         <button type="submit" class="btn btn-primary btn-block btn-lg sm_bg_6 border-0">Request password
                             reset

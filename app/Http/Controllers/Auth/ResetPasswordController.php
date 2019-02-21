@@ -51,7 +51,10 @@ class ResetPasswordController extends Controller
      */
     public function reset(Request $request)
     {
-        $request->validate($this->rules(), $this->validationErrorMessages());
+        $request->validate($this->rules(), $this->validationErrorMessages() + [
+                'password.min'=>'Password must contain at least 6 character contains numbers, uppercase, lowercase and unicode symbols',
+                'password.regex'=>'Password must contain at least 6 character contains numbers, uppercase, lowercase and unicode symbols'
+            ]);
 
         \DB::setDefaultConnection('tenant');
 
@@ -108,5 +111,20 @@ class ResetPasswordController extends Controller
         $user->save();
 
         event(new PasswordReset($user));
+    }
+
+    /**
+     * Get the password reset validation rules.
+     *
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => ['required','confirmed','min:6','regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/'],
+            'g-recaptcha-response' => 'required|captcha'
+        ];
     }
 }

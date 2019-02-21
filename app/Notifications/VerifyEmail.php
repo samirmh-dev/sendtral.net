@@ -2,12 +2,10 @@
 
 namespace App\Notifications;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Notifications\Notification;
-use \App\Mail\VerifyEmail as Mailable;
 
 class VerifyEmail extends Notification
 {
@@ -17,6 +15,13 @@ class VerifyEmail extends Notification
      * @var \Closure|null
      */
     public static $toMailCallback;
+
+    private $tenantSlug;
+
+    public function __construct($tenantSlug = null)
+    {
+        $this->tenantSlug = $tenantSlug;
+    }
 
     /**
      * Get the notification's channels.
@@ -33,7 +38,7 @@ class VerifyEmail extends Notification
      * Build the mail representation of the notification.
      *
      * @param  mixed $notifiable
-     * @return \App\Mail\VerifyEmail|mixed
+     * @return MailMessage|mixed
      */
     public function toMail($notifiable)
     {
@@ -41,7 +46,11 @@ class VerifyEmail extends Notification
             return call_user_func(static::$toMailCallback, $notifiable);
         }
 
-        return (new Mailable($this->verificationUrl($notifiable)))->to($notifiable->email);
+        return (new MailMessage)
+            ->subject('Verify Email Address')
+            ->view('email.verify-email',[
+                'url'=>$this->verificationUrl($notifiable)
+            ]);
     }
 
     /**
@@ -53,7 +62,7 @@ class VerifyEmail extends Notification
     protected function verificationUrl($notifiable)
     {
         return URL::temporarySignedRoute(
-            'tenant:verification.verify', Carbon::now()->addMinutes(60), ['tenant'=>session('tenant'),'id' => $notifiable->getKey()]
+            'tenant:verification.verify', Carbon::now()->addMinutes(60), ['tenant'=>$this->tenantSlug??session('tenant'),'id' => $notifiable->getKey()]
         );
     }
 
