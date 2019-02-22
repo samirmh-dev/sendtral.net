@@ -31,6 +31,19 @@ mix.scripts([
     'resources/assets/plugins/placeholders/placeholders.js',
     'resources/assets/plugins/jquery-validate/jquery.validate.min.js',
     'resources/assets/js/extra-signup.js',
+    'resources/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
+    'resources/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
+    'resources/assets/plugins/bootstrap-daterangepicker/moment.js',
+    'resources/assets/plugins/bootstrap-daterangepicker/daterangepicker.js',
+    'resources/assets/plugins/dragula/dragula.min.js',
+    'resources/assets/plugins/sly/plugins.js',
+    'resources/assets/plugins/sly/sly.min.js',
+    'resources/assets/plugins/sly/horizontal.js',
+    'resources/assets/js/app.js',
+], 'public/js/app.min.js').sourceMaps().version();
+
+
+mix.scripts([
     'resources/assets/plugins/DataTables/media/js/jquery.dataTables.js',
     'resources/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js',
     'resources/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js',
@@ -44,13 +57,4 @@ mix.scripts([
     'resources/assets/plugins/DataTables/extensions/FixedHeader/js/dataTables.fixedHeader.min.js',
     'resources/assets/plugins/DataTables/extensions/ColReorder/js/dataTables.colReorder.min.js',
     'resources/assets/plugins/DataTables/extensions/Buttons/js/jszip.min.js',
-    'resources/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-    'resources/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
-    'resources/assets/plugins/bootstrap-daterangepicker/moment.js',
-    'resources/assets/plugins/bootstrap-daterangepicker/daterangepicker.js',
-    'resources/assets/plugins/dragula/dragula.min.js',
-    'resources/assets/plugins/sly/plugins.js',
-    'resources/assets/plugins/sly/sly.min.js',
-    'resources/assets/plugins/sly/horizontal.js',
-    'resources/assets/js/app.js',
-], 'public/js/app.min.js').sourceMaps().version();
+], 'public/js/datatable.min.js').sourceMaps().version();

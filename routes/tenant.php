@@ -24,5 +24,7 @@ Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->attribute('where',['t
     Route::prefix('dashboard')->middleware(['authTenant','verified'])->group(function(){
        Route::view('/','dashboard.index')->name('dashboard');
        Route::view('access-logs','dashboard.security.access-logs')->name('access-logs');
+
+       Route::resource('roles','RolesController');
     });
 });

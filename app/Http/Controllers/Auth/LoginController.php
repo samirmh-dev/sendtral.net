@@ -54,7 +54,8 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-        $manager->loadTenant(session('tenant'));
+        if(session('tenant'))
+            $manager->loadTenant(session('tenant'));
 
         if(!session('tenant'))
             return redirect()->to('http://'.Tenant::whereCompanyName($request['company'])->get()->first()->slug.'.'.config('custom.TENANT_DOMAIN'));
@@ -94,12 +95,12 @@ class LoginController extends Controller
             $request->validate([
                 $this->username() => 'required|string',
                 'password' => 'required|string',
-//                'g-recaptcha-response' => 'required|captcha'
+                'g-recaptcha-response' => 'required|captcha'
             ]);
         else
             $request->validate([
                 'company' => 'required|exists:tenants,company_name',
-//                'g-recaptcha-response' => 'required|captcha'
+                'g-recaptcha-response' => 'required|captcha'
             ]);
     }
 

@@ -267,233 +267,233 @@
                                     <!-- BEGIN NAVBAR LINKS -->
                                     <ul class="navbar-nav">
 
-                                        <li class="nav-item dropdown megamenu">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                               data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-desktop"></i>
-                                                Dispatch
-                                            </a>
+                                        {{--<li class="nav-item dropdown megamenu">--}}
+                                            {{--<a class="nav-link dropdown-toggle" href="javascript:void(0)"--}}
+                                               {{--data-toggle="dropdown"--}}
+                                               {{--aria-haspopup="true" aria-expanded="false">--}}
+                                                {{--<i class="fa fa-desktop"></i>--}}
+                                                {{--Dispatch--}}
+                                            {{--</a>--}}
 
-                                            <div class="dropdown-menu">
-                                                <div class="mega-dropdown-menu row row-no-padding">
-
-
-                                                    <div class="col-md-4 ">
-                                                        <label class="nav_label">Set Up</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li> <a class="dropdown-item" href=""> Attentions</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Contacts</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Departments</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Documents</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Document Type</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Employees</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Groups</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Locations</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Lock Locations</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Occurrences</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Shedule On</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Vehicle Services</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Users</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Vehicle Colors</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Vehicle Manufacturers</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Vehicle Models</a> </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-md-4 ">
-                                                        <label class="nav_label ">Dispatcher</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li> <a class="dropdown-item" href=""> Dispatcher Dashboard</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Manager Dashboard</a> </li>
-                                                            <li>
-                                                                <label class="nav_label m-t-20">Reports</label>
-                                                            </li>
-                                                            <li> <a class="dropdown-item" href=""> Activity Report</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Ban & Bar Report </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Bolo Report</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Custody Report</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Daily Activity Report</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Incidents</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Incident Report </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Productivity</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Use Of Force</a> </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-md-4 ">
-                                                        <label class="nav_label">Logs</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li> <a class="dropdown-item" href=""> Information Log </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Money Bag Log </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Mortuary Log </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> MV Assistance </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Parking Exceptions Log </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Property Pass </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Valuable Log</a> </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item dropdown megamenu">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                               data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-book"></i>
-                                                Investigations
-                                            </a>
-
-                                            <div class="dropdown-menu" style="width:30%;">
-                                                <div class="mega-dropdown-menu row row-no-padding">
+                                            {{--<div class="dropdown-menu">--}}
+                                                {{--<div class="mega-dropdown-menu row row-no-padding">--}}
 
 
-                                                    <div class="col-md-6 ">
-                                                        <label class="nav_label">Setup</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li>  <a class="dropdown-item" href=""> Activity </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Associations </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Follow-Up </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Collaborator Type </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Investigation Type </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Priority </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Type Of Clearance </a> </li>
-                                                        </ul>
-                                                    </div>
+                                                    {{--<div class="col-md-4 ">--}}
+                                                        {{--<label class="nav_label">Set Up</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Attentions</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Contacts</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Departments</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Documents</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Document Type</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Employees</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Groups</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Locations</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Lock Locations</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Occurrences</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Shedule On</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Vehicle Services</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Users</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Vehicle Colors</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Vehicle Manufacturers</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Vehicle Models</a> </li>--}}
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
 
-                                                    <div class="col-md-6 ">
-                                                        <label class="nav_label">Investigations </label>
-                                                        <ul class="megadropdown-links">
-                                                            <li>  <a class="dropdown-item" href=""> Investigation Short Form </a> </li>
+                                                    {{--<div class="col-md-4 ">--}}
+                                                        {{--<label class="nav_label ">Dispatcher</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Dispatcher Dashboard</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Manager Dashboard</a> </li>--}}
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20">Reports</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Activity Report</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Ban & Bar Report </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Bolo Report</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Custody Report</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Daily Activity Report</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Incidents</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Incident Report </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Productivity</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Use Of Force</a> </li>--}}
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
 
-                                                            <li>
-                                                                <label class="nav_label m-t-20"> Investigations Reports </label>
+                                                    {{--<div class="col-md-4 ">--}}
+                                                        {{--<label class="nav_label">Logs</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Information Log </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Money Bag Log </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Mortuary Log </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> MV Assistance </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Parking Exceptions Log </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Property Pass </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Valuable Log</a> </li>--}}
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
 
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Investigation Reports </a> </li>
+                                        {{--<li class="nav-item dropdown megamenu">--}}
+                                            {{--<a class="nav-link dropdown-toggle" href="javascript:void(0)"--}}
+                                               {{--data-toggle="dropdown"--}}
+                                               {{--aria-haspopup="true" aria-expanded="false">--}}
+                                                {{--<i class="fa fa-book"></i>--}}
+                                                {{--Investigations--}}
+                                            {{--</a>--}}
 
-                                                            <li>
-                                                                <label class="nav_label m-t-20"> Dashboard </label>
-
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Investigation Dashboard </a> </li>
-
-
-                                                        </ul>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-                                        </li>
-
-
-                                        <li class="nav-item dropdown megamenu">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                               data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-undo"></i>
-                                                Reclaim
-                                            </a>
-
-                                            <div class="dropdown-menu" style="width:30%;">
-                                                <div class="mega-dropdown-menu row row-no-padding">
-
-
-                                                    <div class="col-md-6 ">
-                                                        <label class="nav_label">Set Up</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li> <a class="dropdown-item" href=""> Item categories</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Storage Locations</a> </li>
-                                                            <li>
-                                                                <label class="nav_label m-t-20">Reports</label>
-                                                            </li>
-                                                            <li> <a class="dropdown-item" href=""> Disposed Items</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Donated Items</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Found Items </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Lost Items</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Matched Items</a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Return Items</a> </li>
-
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-md-6 ">
-                                                        <label class="nav_label ">Items</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li> <a class="dropdown-item" href=""> Found </a> </li>
-                                                            <li> <a class="dropdown-item" href=""> Lost </a> </li>
-                                                            <li>
-                                                                <label class="nav_label m-t-20">Dashboard</label>
-                                                            </li>
-                                                            <li> <a class="dropdown-item" href=""> Reclaim Dashboard</a> </li>
-
-                                                        </ul>
-                                                    </div>
+                                            {{--<div class="dropdown-menu" style="width:30%;">--}}
+                                                {{--<div class="mega-dropdown-menu row row-no-padding">--}}
 
 
-                                                </div>
-                                            </div>
-                                        </li>
+                                                    {{--<div class="col-md-6 ">--}}
+                                                        {{--<label class="nav_label">Setup</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Activity </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Associations </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Follow-Up </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Collaborator Type </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Investigation Type </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Priority </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Type Of Clearance </a> </li>--}}
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+                                                    {{--<div class="col-md-6 ">--}}
+                                                        {{--<label class="nav_label">Investigations </label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Investigation Short Form </a> </li>--}}
+
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20"> Investigations Reports </label>--}}
+
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Investigation Reports </a> </li>--}}
+
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20"> Dashboard </label>--}}
+
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Investigation Dashboard </a> </li>--}}
+
+
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
+
+
+                                        {{--<li class="nav-item dropdown megamenu">--}}
+                                            {{--<a class="nav-link dropdown-toggle" href="javascript:void(0)"--}}
+                                               {{--data-toggle="dropdown"--}}
+                                               {{--aria-haspopup="true" aria-expanded="false">--}}
+                                                {{--<i class="fa fa-undo"></i>--}}
+                                                {{--Reclaim--}}
+                                            {{--</a>--}}
+
+                                            {{--<div class="dropdown-menu" style="width:30%;">--}}
+                                                {{--<div class="mega-dropdown-menu row row-no-padding">--}}
+
+
+                                                    {{--<div class="col-md-6 ">--}}
+                                                        {{--<label class="nav_label">Set Up</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Item categories</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Storage Locations</a> </li>--}}
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20">Reports</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Disposed Items</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Donated Items</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Found Items </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Lost Items</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Matched Items</a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Return Items</a> </li>--}}
+
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+                                                    {{--<div class="col-md-6 ">--}}
+                                                        {{--<label class="nav_label ">Items</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Found </a> </li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Lost </a> </li>--}}
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20">Dashboard</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li> <a class="dropdown-item" href=""> Reclaim Dashboard</a> </li>--}}
+
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
 
 
 
-                                        <li class="nav-item dropdown megamenu">
-                                            <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                               data-toggle="dropdown"
-                                               aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-calendar"></i>
-                                                Scheduling
-                                            </a>
+                                        {{--<li class="nav-item dropdown megamenu">--}}
+                                            {{--<a class="nav-link dropdown-toggle" href="javascript:void(0)"--}}
+                                               {{--data-toggle="dropdown"--}}
+                                               {{--aria-haspopup="true" aria-expanded="false">--}}
+                                                {{--<i class="fa fa-calendar"></i>--}}
+                                                {{--Scheduling--}}
+                                            {{--</a>--}}
 
-                                            <div class="dropdown-menu" style="width:30%;">
-                                                <div class="mega-dropdown-menu row row-no-padding">
-
-
-                                                    <div class="col-md-6">
-                                                        <label class="nav_label">Setup</label>
-                                                        <ul class="megadropdown-links">
-                                                            <li>  <a class="dropdown-item" href=""> Defaults </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Open Shifts </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Shifts </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Time-off Types  </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Time Of Log  </a> </li>
-                                                            <li>
-                                                                <label class="nav_label m-t-20"> Shifts</label>
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Available Shifts </a> </li>
-                                                            <li>
-                                                                <label class="nav_label m-t-20">Shift Planning</label>
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Shift Planning </a> </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <label class="nav_label">Time Clock </label>
-                                                        <ul class="megadropdown-links">
-                                                            <li>  <a class="dropdown-item" href=""> Time Clock </a> </li>
-
-                                                            <li>
-                                                                <label class="nav_label m-t-20">Reports</label>
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Employee Time Report </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Open Shifts Report </a> </li>
-                                                            <li>  <a class="dropdown-item" href=""> Time Clock Report </a> </li>
-
-                                                            <li>
-                                                                <label class="nav_label m-t-20"> Dashboard </label>
-                                                            </li>
-                                                            <li>  <a class="dropdown-item" href=""> Sheduling Dashboard </a> </li>
-
-                                                        </ul>
-                                                    </div>
+                                            {{--<div class="dropdown-menu" style="width:30%;">--}}
+                                                {{--<div class="mega-dropdown-menu row row-no-padding">--}}
 
 
-                                                </div>
-                                            </div>
-                                        </li>
+                                                    {{--<div class="col-md-6">--}}
+                                                        {{--<label class="nav_label">Setup</label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Defaults </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Open Shifts </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Shifts </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Time-off Types  </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Time Of Log  </a> </li>--}}
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20"> Shifts</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Available Shifts </a> </li>--}}
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20">Shift Planning</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Shift Planning </a> </li>--}}
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+                                                    {{--<div class="col-md-6">--}}
+                                                        {{--<label class="nav_label">Time Clock </label>--}}
+                                                        {{--<ul class="megadropdown-links">--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Time Clock </a> </li>--}}
+
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20">Reports</label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Employee Time Report </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Open Shifts Report </a> </li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Time Clock Report </a> </li>--}}
+
+                                                            {{--<li>--}}
+                                                                {{--<label class="nav_label m-t-20"> Dashboard </label>--}}
+                                                            {{--</li>--}}
+                                                            {{--<li>  <a class="dropdown-item" href=""> Sheduling Dashboard </a> </li>--}}
+
+                                                        {{--</ul>--}}
+                                                    {{--</div>--}}
+
+
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</li>--}}
 
 
                                         <li class="nav-item dropdown megamenu">
@@ -513,8 +513,8 @@
                                                         <ul class="megadropdown-links">
                                                             <li> <a class="dropdown-item" href="{{route('tenant:access-logs',['tenant'=>session('tenant')])}}"> Access Logs</a> </li>
                                                             <li> <a class="dropdown-item" href="{{url('/pages')}}"> Pages</a> </li>
-                                                            <li> <a class="dropdown-item" href="{{url('/permissions/view')}}"> Permissions</a> </li>
-                                                            <li> <a class="dropdown-item" href="{{url('/roles')}}"> Roles</a> </li>
+                                                            <li> <a class="dropdown-item" href="{{url('/permissions/view')}}"> Users</a> </li>
+                                                            <li> <a class="dropdown-item" href="{{ route('tenant:roles.index',['tenant'=>session('tenant')]) }}"> Roles</a> </li>
 
                                                         </ul>
                                                     </div>
@@ -631,7 +631,6 @@
 
 <!-- TO TOP -->
 <a href="javascript:void(0)" class="back-to-top btn-back-to-top sm_bg_1"></a>
-
 <script src="{{ mix('js/app.min.js')}}"></script>
 @stack('js')
 @if (session('verified'))

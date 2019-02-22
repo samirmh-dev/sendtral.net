@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@push('title')
+    Roles
+@endpush
+
 @push('js')
     <script src="{{ mix('js/datatable.min.js')}}"></script>
     <script>
@@ -41,9 +45,9 @@
                 <ol class="breadcrumb sm-breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('tenant:dashboard',['tenant'=>session('tenant')]) }}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Security</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Access Logs</li>
+                    <li class="breadcrumb-item active" aria-current="page">Roles</li>
                 </ol>
-                <h6 class="sm-pagetitle--style-1 has_page_title">View access logs</h6>
+                <h6 class="sm-pagetitle--style-1 has_page_title">View roles</h6>
             </div>
             <!--END BREADCRUMB-->
 
@@ -67,7 +71,7 @@
                                         </a>
                                     </div>
                                     <h6 class="sm-header">
-                                        Access Logs
+                                        Roles
                                     </h6>
                                 </div>
                                 <div class="sm-box">
@@ -75,24 +79,21 @@
                                         <thead>
                                         <tr>
                                             <th>SNo</th>
-                                            <th>E-mail</th>
-                                            <th>Login IP Address</th>
-                                            <th>Login DDTM (UTC)</th>
-                                            <th>Logout IP Address</th>
-                                            <th>Logout DDTM (UTC)</th>
+                                            <th>Role name</th>
+                                            <th>Created DDTM (UTC)</th>
+                                            <th>Updated DDTM (UTC)</th>
+                                            <th>Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach(\App\AccessLogs::all() as $log)
-                                                <tr class="gradeX">
-                                                    <td>{{ $log->id }}</td>
-                                                    <td>{{ $log->user->email }}</td>
-                                                    <td>{{ $log->log_in_ip }}</td>
-                                                    <td>{{ \Carbon\Carbon::parse($log->logged_in)->timezone('UTC')->format('d M Y H:i:s') }}</td>
-                                                    <td>{{ $log->log_out_ip??'-' }}</td>
-                                                    <td>{{ $log->logged_out!=NULL?\Carbon\Carbon::parse($log->logged_out)->timezone('UTC')->format('d M Y H:i:s'):'-' }}</td>
-                                                </tr>
-                                            @endforeach
+                                        @foreach(\App\Role::all() as $role)
+                                            <tr class="gradeX">
+                                                <td>{{ $role->id }}</td>
+                                                <td>{{ $log->name }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($log->created_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
+                                                <td>Actions</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -2,7 +2,8 @@
     "/js/manifest.js": "/js/manifest.js?id=6a4eb117ddc7ca47286f",
     "/js/manifest.js.map": "/js/manifest.js.map?id=2b7092fd6e2c065e72d7",
     "/js/modernizr-custom.min.js": "/js/modernizr-custom.min.js?id=60a61a031692a2c6ca0e",
-    "/css/app.min.css": "/css/app.min.css?id=481c2c0ec45dd7adf5ca",
-    "/js/modernizr-custom.min.js.map": "/js/modernizr-custom.min.js.map?id=d73af430d8b0bba07cd3",
-    "/js/app.min.js": "/js/app.min.js?id=2000be1d693ec58f439b"
+    "/css/app.min.css": "/css/app.min.css?id=20846ddb0242584cce47",
+    "/js/modernizr-custom.min.js.map": "/js/modernizr-custom.min.js.map?id=060d4b9ae09633ba4d85",
+    "/js/app.min.js": "/js/app.min.js?id=07384c14b84d7c2c40c0",
+    "/js/datatable.min.js": "/js/datatable.min.js?id=7a9915b66b623d8d3ec6"
 }
