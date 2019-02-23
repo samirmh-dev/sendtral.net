@@ -105,13 +105,19 @@ class RolesController extends Controller
             'name' => 'required|string',
             'permissions' => 'required|array',
             'permissions.*' => 'required|array',
-            'permissions.*.read' => 'required|accepted',
+            'permissions.*.read' => 'sometimes|required|accepted',
             'permissions.*.add' => 'sometimes|required|accepted',
             'permissions.*.update' => 'sometimes|required|accepted',
             'permissions.*.delete' => 'sometimes|required|accepted',
         ]);
 
-        $permissions = json_encode($request['permissions']);
+        $permissions = $request['permissions'];
+
+        foreach($permissions as $key=>$permission)
+            if(!array_key_exists('read',$permission))
+                unset($permissions[$key]);
+
+        $permissions = json_encode($permissions);
 
         $role->name = $request['name'];
 

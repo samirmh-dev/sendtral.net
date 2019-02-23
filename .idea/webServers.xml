@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a3400f0d-d8b8-4771-810a-1a56d938bbbe" name="sendtral-aws" url="http://13.58.151.47">
-        <fileTransfer host="13.58.151.47" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
+      <webServer id="a3400f0d-d8b8-4771-810a-1a56d938bbbe" name="sendtral-aws" url="http://3.16.69.220">
+        <fileTransfer host="3.16.69.220" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/ec2-user" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

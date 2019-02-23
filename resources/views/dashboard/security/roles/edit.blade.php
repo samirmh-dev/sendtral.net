@@ -81,23 +81,25 @@
                                                             {{ $permission }}
                                                         </label>
                                                     </div>
-                                                    <div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input {{ $role->hasAccess($key, 'add')?'checked':'' }} type="checkbox" id="{{ $key.'-add' }}" value="1"  name="permissions[{{ $key }}][add]" autocomplete="off">
-                                                            <label for="{{ $key.'-add' }}">
-                                                                Add </label>
+                                                    @if(!in_array($key,['access-logs']))
+                                                        <div>
+                                                            <div class="checkbox checkbox-success checkbox-inline">
+                                                                <input {{ $role->hasAccess($key, 'add')?'checked':'' }} type="checkbox" id="{{ $key.'-add' }}" value="1"  name="permissions[{{ $key }}][add]" autocomplete="off">
+                                                                <label for="{{ $key.'-add' }}">
+                                                                    Add </label>
+                                                            </div>
+                                                            <div class="checkbox checkbox-success checkbox-inline">
+                                                                <input {{ $role->hasAccess($key, 'update')?'checked':'' }} type="checkbox" id="{{ $key.'-update' }}" value="1"  name="permissions[{{ $key }}][update]" autocomplete="off">
+                                                                <label for="{{ $key.'-update' }}">
+                                                                    Update </label>
+                                                            </div>
+                                                            <div class="checkbox checkbox-success checkbox-inline">
+                                                                <input {{ $role->hasAccess($key, 'delete')?'checked':'' }} type="checkbox" id="{{ $key.'-delete' }}" value="1"  name="permissions[{{ $key }}][delete]" autocomplete="off">
+                                                                <label for="{{ $key.'-delete' }}">
+                                                                    Delete </label>
+                                                            </div>
                                                         </div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input {{ $role->hasAccess($key, 'update')?'checked':'' }} type="checkbox" id="{{ $key.'-update' }}" value="1"  name="permissions[{{ $key }}][update]" autocomplete="off">
-                                                            <label for="{{ $key.'-update' }}">
-                                                                Update </label>
-                                                        </div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input {{ $role->hasAccess($key, 'delete')?'checked':'' }} type="checkbox" id="{{ $key.'-delete' }}" value="1"  name="permissions[{{ $key }}][delete]" autocomplete="off">
-                                                            <label for="{{ $key.'-delete' }}">
-                                                                Delete </label>
-                                                        </div>
-                                                    </div>
+                                                    @endif
                                                 </div>
                                             @endforeach
                                         </div>
