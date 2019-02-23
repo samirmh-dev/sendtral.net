@@ -75,7 +75,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapTenantRoutes()
     {
-        Route::middleware(['web', 'identifyTenant'])
+        Route::middleware([ 'identifyTenant', 'web'])
             ->as('tenant:')
             ->namespace($this->namespace)
             ->group(base_path('routes/tenant.php'));

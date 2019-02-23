@@ -11,6 +11,9 @@ return [
     'TENANT_HOST' => env('TENANT_HOST', 'localhost'),
 
     'permissions'=> [
+        'roles'=>'Roles',
+        'users'=>'Users',
+        'access-logs'=>'Access logs',
         'defaults'=>'Scheduling / Defaults',
         'open-shifts'=>'Scheduling / Open shifts',
     ]

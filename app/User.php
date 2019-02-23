@@ -53,4 +53,35 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(AccessLogs::class,'user_id');
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
+
+    /**
+     * Checks if User has access to $permissions.
+     * @param array $permissions
+     * @return bool
+     */
+    public function hasAccess($permission, $action) : bool
+    {
+        // check if the permission is available in any role
+        foreach ($this->roles as $role) {
+            if($role->hasAccess($permission, $action)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Checks if the user belongs to role.
+     * @param string $roleSlug
+     * @return bool
+     */
+    public function inRole(string $roleSlug)
+    {
+        return $this->roles()->where('slug', $roleSlug)->count() == 1;
+    }
 }

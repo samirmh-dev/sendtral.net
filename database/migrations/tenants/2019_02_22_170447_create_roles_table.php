@@ -19,13 +19,11 @@ class CreateRolesTable extends Migration
             $table->string('slug')->unique();
             $table->text('permissions');
             $table->timestamps();
-            $table->softDeletes();
         });
 
         Schema::create('role_user', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('role_id');
-            $table->timestamps();
 
             $table->unique(['user_id','role_id']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

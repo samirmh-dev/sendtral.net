@@ -53,35 +53,6 @@
                     <form action="{{ route('login') }}" method="POST" class="margin-bottom-0 form-default">
                         @csrf
 
-                        <div class="row mb-3">
-                            <div class="col-lg-12 sm-form-design ">
-                                <div class="input-group input-group--style-1">
-                                    <input {{ session('tenant')?'readonly':'' }} type="text" name="company" id=""
-                                           class="form-control h5-email {{ $errors->has('company') ? ' has-error' : '' }}"
-                                           placeholder="Please enter your company name"
-                                           value="{{ session('tenant')?session('tenant').'.sendtral.net':(old('company')??'') }}"
-                                           required autocomplete="off"
-                                           tabindex="1"
-                                           maxlength="35">
-
-                                    @if(!session('tenant'))
-                                        <span class="input-group-addon {{ $errors->has('company') ? ' has-error' : '' }}" style="    border-right-style: solid;
-    border-right-width: 1px;border-right-color: rgb(230, 230, 230);">
-                                                                                .sendtral.com
-                                    </span>
-                                    @endif
-
-                                    <label class="control-label" style="z-index: 9999;">Company name</label>
-                                </div>
-
-                                @if ($errors->has('company'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('company') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                         @if(session('tenant'))
                             <div class="row mb-3">
                                 <div class="col-lg-12 sm-form-design">
@@ -123,6 +94,35 @@
                                         <input type="checkbox" checked id="chkRemember">
                                         <label for="chkRemember">Remember me</label>
                                     </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="row mb-3">
+                                <div class="col-lg-12 sm-form-design ">
+                                    <div class="input-group input-group--style-1">
+                                        <input {{ session('tenant')?'readonly':'' }} type="text" name="company" id=""
+                                               class="form-control h5-email {{ $errors->has('company') ? ' has-error' : '' }}"
+                                               placeholder="Please enter your company name"
+                                               value="{{ session('tenant')?session('tenant').'.sendtral.net':(old('company')??'') }}"
+                                               required autocomplete="off"
+                                               tabindex="1"
+                                               maxlength="35">
+
+                                        @if(!session('tenant'))
+                                            <span class="input-group-addon {{ $errors->has('company') ? ' has-error' : '' }}" style="    border-right-style: solid;
+    border-right-width: 1px;border-right-color: rgb(230, 230, 230);">
+                                                                                .sendtral.com
+                                    </span>
+                                        @endif
+
+                                        <label class="control-label" style="z-index: 9999;">Company name</label>
+                                    </div>
+
+                                    @if ($errors->has('company'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('company') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                         @endif

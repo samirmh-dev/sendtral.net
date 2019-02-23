@@ -512,7 +512,6 @@
                                                         <label class="nav_label"> Security</label>
                                                         <ul class="megadropdown-links">
                                                             <li> <a class="dropdown-item" href="{{route('tenant:access-logs',['tenant'=>session('tenant')])}}"> Access Logs</a> </li>
-                                                            <li> <a class="dropdown-item" href="{{url('/pages')}}"> Pages</a> </li>
                                                             <li> <a class="dropdown-item" href="{{url('/permissions/view')}}"> Users</a> </li>
                                                             <li> <a class="dropdown-item" href="{{ route('tenant:roles.index',['tenant'=>session('tenant')]) }}"> Roles</a> </li>
 
@@ -636,6 +635,21 @@
 @if (session('verified'))
     <script>setTimeout(()=>{
             toastr["success"]("Your account verified successfully","Success")
+        },1000)</script>
+@endif
+@if (session('success'))
+    <script>setTimeout(()=>{
+            toastr["success"]("{{ session('success') }}","Success")
+        },1000)</script>
+@endif
+@if (session('warning'))
+    <script>setTimeout(()=>{
+            toastr["warning"]("{{ session('warning') }}","Warning")
+        },1000)</script>
+@endif
+@if (session('error'))
+    <script>setTimeout(()=>{
+            toastr["danger"]("{{ session('error') }}","Error")
         },1000)</script>
 @endif
 </body>

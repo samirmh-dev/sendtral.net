@@ -55,6 +55,12 @@
             <div class="sm-content">
                 <div class="sm-content-box">
                     <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{ route('tenant:roles.create',['tenant'=>session('tenant')]) }}" class="btn btn-primary m-t-5">Create new role</a>
+                            <br><br>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="sm-wrapper">
                                 <div class="title_box sm-header-style-1">
@@ -89,9 +95,17 @@
                                         @foreach(\App\Role::all() as $role)
                                             <tr class="gradeX">
                                                 <td>{{ $role->id }}</td>
-                                                <td>{{ $log->name }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($log->created_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
-                                                <td>Actions</td>
+                                                <td>{{ $role->name }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($role->created_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($role->updated_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
+                                                <td class="">
+                                                    <a style="display: inline-block;" href="{{ route('tenant:roles.edit',['roles'=>$role->id,'tenant'=>session('tenant'),]) }}" class="btn btn-warning">Edit</a>
+                                                    <form style="display: inline-block;" action="{{ route('tenant:roles.destroy',['roles'=>$role->id,'tenant'=>session('tenant'),]) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>

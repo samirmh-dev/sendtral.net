@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Notifications\UserRegistered;
 use App\Notifications\VerifyEmail;
+use App\Role;
 use App\Services\TenantManager;
 use App\Tenant;
 use App\User;
@@ -51,8 +52,27 @@ class TenantDatabase
 
 //        session(['tenant'=>$this->tenant->slug]);
 
-        User::findOrFail($id)->notify(new VerifyEmail($this->tenant->slug));
+        $user = User::findOrFail($id);
 
+        $user->notify(new VerifyEmail($this->tenant->slug));
+
+        $permissions = [];
+
+        foreach(config('custom.permissions') as $key=>$permission)
+            $permissions[$key] = [
+                'read'=>'on',
+                'add'=>'on',
+                'delete'=>'on',
+                'update'=>'on',
+            ];
+
+        $role = Role::create([
+            'name'=>'Full access',
+            'slug'=>'full-access',
+            'permissions'=>json_encode($permissions)
+        ]);
+
+        $user->roles()->attach($role);
     }
 
     private function migrate()
