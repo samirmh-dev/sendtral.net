@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c337b2f-ed8c-4454-af01-676107f8592a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/security/access-logs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/security/access-logs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/security/roles/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/security/roles/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/security/roles/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,50 +46,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="110" column="101" selection-start-line="110" selection-start-column="101" selection-end-line="110" selection-end-column="101" />
-              <folding>
-                <element signature="e#4693#4723#0#HTML" expanded="true" />
-                <element signature="e#4905#4935#0#HTML" expanded="true" />
-                <element signature="e#6325#11805#0#HTML" />
-                <element signature="e#0#18056#0#Blade" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="9" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/dashboard/security/access-logs.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="92" column="173" lean-forward="true" selection-start-line="92" selection-start-column="173" selection-end-line="92" selection-end-column="173" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="707" column="9" selection-start-line="707" selection-start-column="9" selection-end-line="707" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -185,7 +136,6 @@
         <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/IdentifyTenant.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php" />
         <option value="$PROJECT_DIR$/app/Role.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/custom.php" />
@@ -197,8 +147,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" />
         <option value="$PROJECT_DIR$/routes/tenant.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard/security/access-logs.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php" />
       </list>
     </option>
   </component>
@@ -307,8 +258,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-13" />
+    <option name="x" value="-5" />
+    <option name="y" value="-16" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -328,68 +279,6 @@
             <path>
               <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
               <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Policies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sendtral" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sendtral" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,7 +371,7 @@
       <workItem from="1550762783063" duration="7461000" />
       <workItem from="1550848809830" duration="5528000" />
       <workItem from="1550931191650" duration="12621000" />
-      <workItem from="1551015818112" duration="6818000" />
+      <workItem from="1551015818112" duration="10597000" />
     </task>
     <task id="LOCAL-00001" summary="1. Login, registration and forgot password for multi tenant">
       <created>1549900611842</created>
@@ -533,11 +422,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550946660173</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Roles page, row-level-security implementation DESIGN FIX">
+      <created>1551023437932</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551023437932</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98887000" />
+    <option name="totallyTimeSpent" value="102666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,7 +446,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18283582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -619,16 +514,10 @@
     <MESSAGE value="Added google recaptcha, added SSL certificate on server" />
     <MESSAGE value="Roles page, row-level-security implementation" />
     <MESSAGE value="Roles page, row-level-security implementation FIX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Roles page, row-level-security implementation FIX" />
+    <MESSAGE value="Roles page, row-level-security implementation DESIGN FIX" />
+    <option name="LAST_COMMIT_MESSAGE" value="Roles page, row-level-security implementation DESIGN FIX" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/lib.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -795,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -959,16 +841,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dashboard/security/roles.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="110" column="101" selection-start-line="110" selection-start-column="101" selection-end-line="110" selection-end-column="101" />
-          <folding>
-            <element signature="e#4693#4723#0#HTML" expanded="true" />
-            <element signature="e#4905#4935#0#HTML" expanded="true" />
-            <element signature="e#6325#11805#0#HTML" />
-            <element signature="e#0#18056#0#Blade" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="256" column="68" lean-forward="true" selection-start-line="256" selection-start-column="68" selection-end-line="256" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/tenants/2019_02_22_170447_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
         </state>
       </provider>
     </entry>

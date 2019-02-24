@@ -98,6 +98,7 @@
                                             <tr class="gradeX">
                                                 <td>R{{ sprintf('%04d', $role->id) }}</td>
                                                 <td>{{ $role->name }}</td>
+                                                <td>{{ $role->description }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($role->created_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($role->updated_at)->timezone('UTC')->format('d M Y H:i:s') }}</td>
                                                 <td class="">
@@ -174,47 +175,56 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Permissions</label>
-
-                                        @foreach(config('custom.permissions') as $key=>$permission)
-                                            <div class="col-md-12 d-flex justify-content-between">
-                                                <div class="checkbox">
-                                                    <input id="{{ 'permission'.'-'.$key }}"
-                                                           name="permissions[{{ $key }}][read]" type="checkbox"
-                                                           autocomplete="off">
-                                                    <label for="{{ 'permission'.'-'.$key }}">
-                                                        {{ $permission }}
-                                                    </label>
-                                                </div>
-                                                @if(!in_array($key,['access-logs']))
-                                                    <div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input type="checkbox" id="{{ $key.'-add' }}" value="1"
-                                                                   name="permissions[{{ $key }}][add]"
-                                                                   autocomplete="off">
-                                                            <label for="{{ $key.'-add' }}">
-                                                                Add </label>
-                                                        </div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input type="checkbox" id="{{ $key.'-update' }}" value="1"
-                                                                   name="permissions[{{ $key }}][update]"
-                                                                   autocomplete="off">
-                                                            <label for="{{ $key.'-update' }}">
-                                                                Update </label>
-                                                        </div>
-                                                        <div class="checkbox checkbox-success checkbox-inline">
-                                                            <input type="checkbox" id="{{ $key.'-delete' }}" value="1"
-                                                                   name="permissions[{{ $key }}][delete]"
-                                                                   autocomplete="off">
-                                                            <label for="{{ $key.'-delete' }}">
-                                                                Delete </label>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        @endforeach
+                                    <div class="row mb-3">
+                                        <div class="col-lg-12 sm-form-design">
+                                            <input type="text" name="name" id="inputName" class="form-control"
+                                                   placeholder="Please enter name of role" value="{{ old('name') }}"
+                                                   tabindex="1" maxlength="100" required="" autocomplete="off">
+                                            <label class="control-label">Role description (Maximum 100 character)</label>
+                                        </div>
                                     </div>
+
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>Permissions</label>--}}
+
+                                        {{--@foreach(config('custom.permissions') as $key=>$permission)--}}
+                                            {{--<div class="col-md-12 d-flex justify-content-between">--}}
+                                                {{--<div class="checkbox">--}}
+                                                    {{--<input id="{{ 'permission'.'-'.$key }}"--}}
+                                                           {{--name="permissions[{{ $key }}][read]" type="checkbox"--}}
+                                                           {{--autocomplete="off">--}}
+                                                    {{--<label for="{{ 'permission'.'-'.$key }}">--}}
+                                                        {{--{{ $permission }}--}}
+                                                    {{--</label>--}}
+                                                {{--</div>--}}
+                                                {{--@if(!in_array($key,['access-logs']))--}}
+                                                    {{--<div>--}}
+                                                        {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                            {{--<input type="checkbox" id="{{ $key.'-add' }}" value="1"--}}
+                                                                   {{--name="permissions[{{ $key }}][add]"--}}
+                                                                   {{--autocomplete="off">--}}
+                                                            {{--<label for="{{ $key.'-add' }}">--}}
+                                                                {{--Add </label>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                            {{--<input type="checkbox" id="{{ $key.'-update' }}" value="1"--}}
+                                                                   {{--name="permissions[{{ $key }}][update]"--}}
+                                                                   {{--autocomplete="off">--}}
+                                                            {{--<label for="{{ $key.'-update' }}">--}}
+                                                                {{--Update </label>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                            {{--<input type="checkbox" id="{{ $key.'-delete' }}" value="1"--}}
+                                                                   {{--name="permissions[{{ $key }}][delete]"--}}
+                                                                   {{--autocomplete="off">--}}
+                                                            {{--<label for="{{ $key.'-delete' }}">--}}
+                                                                {{--Delete </label>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--@endif--}}
+                                            {{--</div>--}}
+                                        {{--@endforeach--}}
+                                    {{--</div>--}}
                                 </div>
                             </div>
                         </div>
@@ -272,54 +282,64 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>Permissions</label>
-
-                                            @foreach(config('custom.permissions') as $key=>$permission)
-                                                <div class="col-md-12 d-flex justify-content-between">
-                                                    <div class="checkbox">
-                                                        <input
-                                                            {{ $role->hasAccess($key, 'read')?'checked':'' }} id="{{ 'permission'.'-'.$key }}"
-                                                            name="permissions[{{ $key }}][read]" type="checkbox"
-                                                            autocomplete="off">
-                                                        <label for="{{ 'permission'.'-'.$key }}">
-                                                            {{ $permission }}
-                                                        </label>
-                                                    </div>
-                                                    @if(!in_array($key,['access-logs']))
-                                                        <div>
-                                                            <div class="checkbox checkbox-success checkbox-inline">
-                                                                <input
-                                                                    {{ $role->hasAccess($key, 'add')?'checked':'' }} type="checkbox"
-                                                                    id="{{ $key.'-add' }}" value="1"
-                                                                    name="permissions[{{ $key }}][add]"
-                                                                    autocomplete="off">
-                                                                <label for="{{ $key.'-add' }}">
-                                                                    Add </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-success checkbox-inline">
-                                                                <input
-                                                                    {{ $role->hasAccess($key, 'update')?'checked':'' }} type="checkbox"
-                                                                    id="{{ $key.'-update' }}" value="1"
-                                                                    name="permissions[{{ $key }}][update]"
-                                                                    autocomplete="off">
-                                                                <label for="{{ $key.'-update' }}">
-                                                                    Update </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-success checkbox-inline">
-                                                                <input
-                                                                    {{ $role->hasAccess($key, 'delete')?'checked':'' }} type="checkbox"
-                                                                    id="{{ $key.'-delete' }}" value="1"
-                                                                    name="permissions[{{ $key }}][delete]"
-                                                                    autocomplete="off">
-                                                                <label for="{{ $key.'-delete' }}">
-                                                                    Delete </label>
-                                                            </div>
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                            @endforeach
+                                        <div class="row mb-3">
+                                            <div class="col-lg-12 sm-form-design">
+                                                <input type="text" name="name" id="inputName" class="form-control"
+                                                       placeholder="Please enter name of role"
+                                                       value="{{ old('name')??$role->description }}" tabindex="1"
+                                                       maxlength="35" required="" autocomplete="off">
+                                                <label class="control-label">Role description (Maximum 100 character)</label>
+                                            </div>
                                         </div>
+
+                                        {{--<div class="form-group">--}}
+                                            {{--<label>Permissions</label>--}}
+
+                                            {{--@foreach(config('custom.permissions') as $key=>$permission)--}}
+                                                {{--<div class="col-md-12 d-flex justify-content-between">--}}
+                                                    {{--<div class="checkbox">--}}
+                                                        {{--<input--}}
+                                                            {{--{{ $role->hasAccess($key, 'read')?'checked':'' }} id="{{ 'permission'.'-'.$key }}"--}}
+                                                            {{--name="permissions[{{ $key }}][read]" type="checkbox"--}}
+                                                            {{--autocomplete="off">--}}
+                                                        {{--<label for="{{ 'permission'.'-'.$key }}">--}}
+                                                            {{--{{ $permission }}--}}
+                                                        {{--</label>--}}
+                                                    {{--</div>--}}
+                                                    {{--@if(!in_array($key,['access-logs']))--}}
+                                                        {{--<div>--}}
+                                                            {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                                {{--<input--}}
+                                                                    {{--{{ $role->hasAccess($key, 'add')?'checked':'' }} type="checkbox"--}}
+                                                                    {{--id="{{ $key.'-add' }}" value="1"--}}
+                                                                    {{--name="permissions[{{ $key }}][add]"--}}
+                                                                    {{--autocomplete="off">--}}
+                                                                {{--<label for="{{ $key.'-add' }}">--}}
+                                                                    {{--Add </label>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                                {{--<input--}}
+                                                                    {{--{{ $role->hasAccess($key, 'update')?'checked':'' }} type="checkbox"--}}
+                                                                    {{--id="{{ $key.'-update' }}" value="1"--}}
+                                                                    {{--name="permissions[{{ $key }}][update]"--}}
+                                                                    {{--autocomplete="off">--}}
+                                                                {{--<label for="{{ $key.'-update' }}">--}}
+                                                                    {{--Update </label>--}}
+                                                            {{--</div>--}}
+                                                            {{--<div class="checkbox checkbox-success checkbox-inline">--}}
+                                                                {{--<input--}}
+                                                                    {{--{{ $role->hasAccess($key, 'delete')?'checked':'' }} type="checkbox"--}}
+                                                                    {{--id="{{ $key.'-delete' }}" value="1"--}}
+                                                                    {{--name="permissions[{{ $key }}][delete]"--}}
+                                                                    {{--autocomplete="off">--}}
+                                                                {{--<label for="{{ $key.'-delete' }}">--}}
+                                                                    {{--Delete </label>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--@endif--}}
+                                                {{--</div>--}}
+                                            {{--@endforeach--}}
+                                        {{--</div>--}}
                                     </div>
                                 </div>
                             </div>
