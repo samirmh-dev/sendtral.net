@@ -24,6 +24,23 @@
         .sm-header-style-1 .sm-header {
             background: #242a30;
         }
+        .modal-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f1f1f1;
+            background-color: transparent;
+        }
+
+        .modal-open .modal{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .btn-outline-warning .fa.fa-edit:before{
+            color: #ffc107
+        }
+
+        .btn-outline-warning:hover .fa.fa-edit:before{
+            color: white
+        }
     </style>
 </head>
 <body class="">
@@ -647,9 +664,9 @@
             toastr["warning"]("{{ session('warning') }}","Warning")
         },1000)</script>
 @endif
-@if (session('error'))
+@if($errors->toArray())
     <script>setTimeout(()=>{
-            toastr["danger"]("{{ session('error') }}","Error")
+            toastr["error"]("@foreach($errors->toArray() as $error){{ $error[0] }}@endforeach","Error")
         },1000)</script>
 @endif
 </body>

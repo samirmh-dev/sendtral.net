@@ -85,7 +85,7 @@
                                         <tbody>
                                             @foreach(\App\AccessLogs::all() as $log)
                                                 <tr class="gradeX">
-                                                    <td>{{ $log->id }}</td>
+                                                    <td>AL{{ sprintf('%08d', $log->id) }}</td>
                                                     <td>{{ $log->user->email }}</td>
                                                     <td>{{ $log->log_in_ip }}</td>
                                                     <td>{{ \Carbon\Carbon::parse($log->logged_in)->timezone('UTC')->format('d M Y H:i:s') }}</td>

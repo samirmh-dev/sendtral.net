@@ -9,11 +9,6 @@ use Illuminate\Support\Str;
 
 class RolesController extends Controller
 {
-    public function __construct(TenantManager $tenantManager)
-    {
-
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,20 +19,7 @@ class RolesController extends Controller
     {
         $this->authorize('read', Role::class);
 
-        return view('dashboard.security.roles.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
-    public function create()
-    {
-        $this->authorize('create', Role::class);
-
-        return view('dashboard.security.roles.create');
+        return view('dashboard.security.roles');
     }
 
     /**
@@ -73,20 +55,6 @@ class RolesController extends Controller
         ]);
 
         return redirect()->route('tenant:roles.index',['tenant'=>session('tenant')])->with('success','New role was created successfully');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param $tenant
-     * @param Role $role
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
-    public function edit($tenant, Role $role)
-    {
-        $this->authorize('update', $role);
-        return view('dashboard.security.roles.edit',['role'=>$role]);
     }
 
     /**
@@ -133,8 +101,10 @@ class RolesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param $tenant
+     * @param Role $role
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy($tenant, Role $role)
     {
