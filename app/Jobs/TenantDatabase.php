@@ -58,19 +58,22 @@ class TenantDatabase
 
         $permissions = [];
 
-        foreach(config('custom.permissions') as $key=>$permission)
-            $permissions[$key] = [
-                'read'=>'on',
-                'add'=>'on',
-                'delete'=>'on',
-                'update'=>'on',
-            ];
-
         $role = Role::create([
             'name'=>'Full access',
             'slug'=>'full-access',
-            'permissions'=>json_encode($permissions)
+            'description'=>'Full access to all resources',
         ]);
+
+        foreach(config('custom.permissions') as $key=>$permission)
+            $role->permissions()->create([
+                'page'=>$key,
+                'permissions'=>json_encode([
+                    'read'=>'on',
+                    'add'=>'on',
+                    'delete'=>'on',
+                    'update'=>'on',
+                ])
+            ]);
 
         $user->roles()->attach($role);
     }

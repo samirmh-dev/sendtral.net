@@ -9,7 +9,7 @@ class Role extends Model
     protected $connection = 'tenant';
 
     protected $fillable = [
-        'name', 'slug', 'permissions',
+        'name', 'slug', 'permissions','description'
     ];
 
     protected $casts = [
@@ -23,6 +23,11 @@ class Role extends Model
         return $this->belongsToMany(User::class, 'role_user');
     }
 
+    public function permissions()
+    {
+        return $this->hasMany(Permission::class,'role_id');
+    }
+
     public function hasAccess($permission, $action) : bool
     {
         if ($this->hasPermission($permission, $action))
@@ -32,6 +37,6 @@ class Role extends Model
 
     private function hasPermission(string $permission, $action) : bool
     {
-        return json_decode($this->permissions)->$permission->$action ?? false;
+        return json_decode($this->permissions()->wherePage($permission)->get()->first()->permissions)->$action ?? false;
     }
 }

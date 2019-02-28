@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - @18.216.91.60" uuid="0c51a9e5-5427-471f-92f8-c9ea5897aed6">
+    <data-source source="LOCAL" name="MySQL - @3.16.69.220" uuid="0c51a9e5-5427-471f-92f8-c9ea5897aed6">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <remarks>AWS sendtral</remarks>

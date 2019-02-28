@@ -13,6 +13,7 @@ return [
     'permissions'=> [
         'roles'=>'Roles',
         'users'=>'Users',
+        'permissions'=>'Permissions',
         'access-logs'=>'Access logs',
         'defaults'=>'Scheduling / Defaults',
         'open-shifts'=>'Scheduling / Open shifts',

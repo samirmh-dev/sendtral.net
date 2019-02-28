@@ -529,23 +529,15 @@
                                                         <label class="nav_label"> Security</label>
                                                         <ul class="megadropdown-links">
                                                             <li> <a class="dropdown-item" href="{{route('tenant:access-logs',['tenant'=>session('tenant')])}}"> Access Logs</a> </li>
-                                                            <li> <a class="dropdown-item" href="{{url('/permissions/view')}}"> Users</a> </li>
+                                                            <li> <a class="dropdown-item" href="{{ route('tenant:users.index',['tenant'=>session('tenant')]) }}"> Users</a> </li>
                                                             <li> <a class="dropdown-item" href="{{ route('tenant:roles.index',['tenant'=>session('tenant')]) }}"> Roles</a> </li>
+                                                            <li> <a class="dropdown-item" href="{{ route('tenant:permissions.index',['tenant'=>session('tenant')]) }}"> Permisions</a> </li>
 
                                                         </ul>
                                                     </div>
-
-
-
                                                 </div>
                                             </div>
-
                                         </li>
-
-
-
-
-
                                     </ul>
                                     <!-- END NAVBAR LINKS -->
                                 </div>

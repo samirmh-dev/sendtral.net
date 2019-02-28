@@ -25,6 +25,8 @@ Route::domain('{tenant}.'.config('custom.TENANT_DOMAIN'))->attribute('where',['t
        Route::view('/','dashboard.index')->name('dashboard');
        Route::view('access-logs','dashboard.security.access-logs')->name('access-logs');
 
-       Route::resource('roles','RolesController',['except'=>['edit','show','create']]);
+        Route::resource('roles','RoleController',['except'=>['edit','show','create']]);
+        Route::resource('permissions','PermissionController',['except'=>['edit','show','create']]);
+        Route::resource('users','UsersController',['except'=>['edit','show','create']]);
     });
 });

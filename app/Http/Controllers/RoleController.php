@@ -7,7 +7,7 @@ use App\Services\TenantManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class RolesController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,12 +35,13 @@ class RolesController extends Controller
 
         $request->validate([
             'name' => 'required|string',
-            'permissions' => 'required|array',
-            'permissions.*' => 'required|array',
-            'permissions.*.read' => 'required|accepted',
-            'permissions.*.add' => 'sometimes|required|accepted',
-            'permissions.*.update' => 'sometimes|required|accepted',
-            'permissions.*.delete' => 'sometimes|required|accepted',
+            'description' => 'required|string|max:100',
+//            'permissions' => 'required|array',
+//            'permissions.*' => 'required|array',
+//            'permissions.*.read' => 'required|accepted',
+//            'permissions.*.add' => 'sometimes|required|accepted',
+//            'permissions.*.update' => 'sometimes|required|accepted',
+//            'permissions.*.delete' => 'sometimes|required|accepted',
         ]);
 
         if(Role::whereSlug(Str::slug($request['name']))->get()->first())
@@ -50,8 +51,9 @@ class RolesController extends Controller
 
         Role::create([
             'name' => $request['name'],
+            'description' => $request['description'],
             'slug' => Str::slug($request['name']),
-            'permissions' => $permissions
+//            'permissions' => $permissions
         ]);
 
         return redirect()->route('tenant:roles.index',['tenant'=>session('tenant')])->with('success','New role was created successfully');
@@ -71,27 +73,29 @@ class RolesController extends Controller
 
         $request->validate([
             'name' => 'required|string',
-            'permissions' => 'required|array',
-            'permissions.*' => 'required|array',
-            'permissions.*.read' => 'sometimes|required|accepted',
-            'permissions.*.add' => 'sometimes|required|accepted',
-            'permissions.*.update' => 'sometimes|required|accepted',
-            'permissions.*.delete' => 'sometimes|required|accepted',
+            'description' => 'required|string|max:100',
+//            'permissions' => 'required|array',
+//            'permissions.*' => 'required|array',
+//            'permissions.*.read' => 'sometimes|required|accepted',
+//            'permissions.*.add' => 'sometimes|required|accepted',
+//            'permissions.*.update' => 'sometimes|required|accepted',
+//            'permissions.*.delete' => 'sometimes|required|accepted',
         ]);
 
-        $permissions = $request['permissions'];
+//        $permissions = $request['permissions'];
 
-        foreach($permissions as $key=>$permission)
-            if(!array_key_exists('read',$permission))
-                unset($permissions[$key]);
+//        foreach($permissions as $key=>$permission)
+//            if(!array_key_exists('read',$permission))
+//                unset($permissions[$key]);
 
-        $permissions = json_encode($permissions);
+//        $permissions = json_encode($permissions);
 
         $role->name = $request['name'];
+        $role->description = $request['description'];
 
         $role->slug = Str::slug($request['name']);
 
-        $role->permissions = $permissions;
+//        $role->permissions = $permissions;
 
         $role->save();
 
@@ -108,7 +112,7 @@ class RolesController extends Controller
      */
     public function destroy($tenant, Role $role)
     {
-        $this->authorize('update', $role);
+        $this->authorize('delete', $role);
 
         $role->delete();
 
